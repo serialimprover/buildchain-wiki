@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Build Chain Knowledge Graph</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -517,11 +516,40 @@
 
   <script src="graph-data.js"></script>
   <script>
-    // Configure marked
-    marked.setOptions({
-      breaks: true,
-      gfm: true
-    });
+    // Simple markdown to HTML converter
+    function simpleMarkdown(text) {
+      if (!text) return '';
+      let html = text;
+
+      // Headers
+      html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+      html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
+      html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+
+      // Bold
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
+
+      // Italic
+      html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      html = html.replace(/_(.*?)_/g, '<em>$1</em>');
+
+      // Links
+      html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+
+      // Inline code
+      html = html.replace(/`(.*?)`/g, '<code>$1</code>');
+
+      // Line breaks
+      html = html.replace(/\n\n+/g, '</p><p>');
+      html = '<p>' + html + '</p>';
+
+      // Lists
+      html = html.replace(/\n- (.*?)(\n|$)/g, '<li>$1</li>');
+      html = html.replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>');
+
+      return html;
+    }
 
     const width = document.getElementById('graphContainer').clientWidth;
     const height = document.getElementById('graphContainer').clientHeight;
@@ -610,13 +638,8 @@
 
       // Clear and render content
       if (d.content) {
-        try {
-          const html = marked.parse(d.content);
-          contentDiv.innerHTML = html;
-        } catch (e) {
-          console.error('Error parsing markdown:', e);
-          contentDiv.innerHTML = `<pre>${d.content}</pre>`;
-        }
+        const html = simpleMarkdown(d.content);
+        contentDiv.innerHTML = html;
       } else {
         contentDiv.innerHTML = '<p>No content available for this node.</p>';
       }
