@@ -1,6 +1,32 @@
-.obsidian/plugins/obsidian-local-rest-api/data.json
+# Obsidian cache and plugin data
+.obsidian/plugins/
+.obsidian/community-plugins.json
+.obsidian/workspace.json
+.obsidian/app.json
+.obsidian/hotkeys.json
+
+# Vault temporary files
 wiki/hot.md
-_meta/
+
+# Smart Environment
+.smart-env
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Backup files
+*.bak
+*.tmp
+
+# KEEP IN GIT:
+# - Build Chain/ (raw clips)
+# - wiki/concepts/ and wiki/sources/ (content)
+# - _meta/ (tag index, templates, CLAUDE.md)
+# - docs/ (brainstorms, plans)
 
 
 
