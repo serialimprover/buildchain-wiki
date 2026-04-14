@@ -31,9 +31,9 @@ Welcome to the Build Chain knowledge base — a living, searchable hub for hardw
 
 ## Using This Wiki
 
-1. **Search by tag** — Use Obsidian's tag pane (left sidebar) to filter by phase, system, domain, or standard
-2. **Follow wikilinks** — Click `[[concept]]` links to navigate related pages
-3. **Check the graph** — View → Graph view to see concept clusters
+1. **[Explore the Knowledge Graph](graph.html)** — Interactive visualization of all concepts and their connections
+2. **Follow wikilinks** — Click links to navigate related pages
+3. **Search** — Use the search bar in the graph or filter by concept name
 4. **Trust chain** — Look for `ai-generated`, `ai-reviewed`, and `verified` fields in frontmatter. Search `%%VERIFY%%` vault-wide to find uncertain claims needing review.
 
 ## Frontmatter Fields
