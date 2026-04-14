@@ -213,6 +213,26 @@
       flex: 1;
       overflow-y: auto;
       padding: 1.5rem;
+      min-height: 200px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 140, 66, 0.3) transparent;
+    }
+
+    .drawer-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .drawer-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .drawer-content::-webkit-scrollbar-thumb {
+      background: rgba(255, 140, 66, 0.3);
+      border-radius: 4px;
+    }
+
+    .drawer-content::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 140, 66, 0.5);
     }
 
     .drawer-content h1 {
@@ -583,9 +603,23 @@
 
     function showNodeContent(d) {
       const drawer = document.getElementById('drawer');
+      const contentDiv = document.getElementById('drawerContent');
+
       document.getElementById('drawerTitle').textContent = d.id;
       document.getElementById('drawerMeta').innerHTML = `<span class="badge">${d.type.toUpperCase()}</span><span class="badge">${d.category}</span>`;
-      document.getElementById('drawerContent').innerHTML = marked.parse(d.content || '');
+
+      // Clear and render content
+      if (d.content) {
+        try {
+          const html = marked.parse(d.content);
+          contentDiv.innerHTML = html;
+        } catch (e) {
+          console.error('Error parsing markdown:', e);
+          contentDiv.innerHTML = `<pre>${d.content}</pre>`;
+        }
+      } else {
+        contentDiv.innerHTML = '<p>No content available for this node.</p>';
+      }
 
       const connections = graphData.links.filter(link =>
         link.source === d || link.target === d
@@ -601,6 +635,8 @@
           </div>
         `;
         document.getElementById('relatedNodes').innerHTML = relatedHtml;
+      } else {
+        document.getElementById('relatedNodes').innerHTML = '';
       }
 
       drawer.classList.add('open');
