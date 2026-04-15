@@ -591,6 +591,13 @@
       if (!text) return '';
       let html = text;
 
+      // Wikilinks: [[Page Name]] or [[Page Name|Display Text]]
+      html = html.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, function(match, pageName, displayText) {
+        const slug = pageName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+        const text = displayText || pageName;
+        return `[${text}](./${slug}.html)`;
+      });
+
       // Headers
       html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
       html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
