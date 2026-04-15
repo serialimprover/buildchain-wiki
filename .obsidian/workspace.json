@@ -200,6 +200,14 @@
   },
   "active": "e38f94c6a6ff4a0a",
   "lastOpenFiles": [
+    "docs/metadata.json",
+    "scripts/generate_graph_data.py",
+    "scripts/build_search_index.py",
+    "scripts/generate_embeddings.py",
+    "scripts/transform_vault.py",
+    "scripts",
+    "docs/plans/2026-04-14-001-feat-buildchain-web-publishing-implementation-plan.md",
+    "docs/brainstorms/2026-04-14-buildchain-web-publishing-requirements.md",
     "wiki/concepts/Aerospace NPI Process Overview.md",
     "_backup_Factory_20260413/What is Hardware-in-the-Loop Testing.md",
     "Build Chain/Untitled.md",
@@ -225,16 +233,8 @@
     "Build Chain/Top Tips for Mastering Successful Engineering Change Management.md",
     "Build Chain/The Roles of ERP and PLM in Manufacturing - now with MES!.md",
     "Build Chain/The impact of digital twins on the evolution of intelligent manufacturing and Industry 4.0.md",
-    "Build Chain/The Architect's Guide to Unified Namespace (UNS) Implementation Roadmap.md",
-    "Build Chain/Scraps and Waste Inventory Management in Manufacturing Operations.md",
-    "Build Chain/Role of Digital Twin Technology in Industry 4.0.md",
     "_backup_Clippings_20260413",
     "_backup_Factory_20260413",
-    "_meta/templates",
-    "_meta",
-    "wiki/meta",
-    "wiki/concepts",
-    "wiki/sources",
-    "wiki"
+    "_meta/templates"
   ]
 }
