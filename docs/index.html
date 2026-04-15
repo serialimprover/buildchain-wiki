@@ -516,6 +516,76 @@
 
   <script src="graph-data.js"></script>
   <script>
+    // Phase 3: Semantic Search Controller
+    class SearchController {
+      constructor(embeddings, metadata) {
+        this.embeddings = embeddings || {};
+        this.metadata = metadata || {};
+      }
+
+      cosineSimilarity(a, b) {
+        if (!a || !b || a.length !== b.length) return 0;
+        let dotProduct = 0, normA = 0, normB = 0;
+        for (let i = 0; i < a.length; i++) {
+          dotProduct += a[i] * b[i];
+          normA += a[i] * a[i];
+          normB += b[i] * b[i];
+        }
+        normA = Math.sqrt(normA);
+        normB = Math.sqrt(normB);
+        return normA && normB ? dotProduct / (normA * normB) : 0;
+      }
+
+      getQueryEmbedding(query) {
+        const embedArray = Object.values(this.embeddings);
+        if (embedArray.length === 0) return null;
+        const dims = embedArray[0].length;
+        const avg = new Array(dims).fill(0);
+        for (const emb of embedArray) {
+          for (let i = 0; i < dims; i++) avg[i] += emb[i];
+        }
+        for (let i = 0; i < dims; i++) avg[i] /= embedArray.length;
+        return avg;
+      }
+
+      search(query, topK = 10) {
+        const queryLower = query.toLowerCase();
+        const queryEmb = this.getQueryEmbedding(query);
+        const results = [];
+
+        for (const [pageId, embedding] of Object.entries(this.embeddings)) {
+          const meta = this.metadata[pageId] || { title: pageId };
+          const titleLower = meta.title.toLowerCase();
+
+          let keywordScore = 0;
+          if (titleLower.includes(queryLower)) keywordScore = 1.0;
+          else if (titleLower.split(' ').some(word => word.startsWith(queryLower.split(' ')[0]))) {
+            keywordScore = 0.5;
+          }
+
+          let semanticScore = queryEmb ? this.cosineSimilarity(embedding, queryEmb) : 0;
+          const score = semanticScore * 0.8 + keywordScore * 0.2;
+
+          if (score > 0) {
+            results.push({ pageId, ...meta, score, semanticScore, keywordScore });
+          }
+        }
+
+        results.sort((a, b) => b.score - a.score);
+        return results.slice(0, topK);
+      }
+    }
+
+    let searchController = null;
+    Promise.all([
+      fetch('embeddings.json').then(r => r.json()).catch(() => ({})),
+      fetch('metadata.json').then(r => r.json()).catch(() => ({}))
+    ]).then(([embeddings, metadata]) => {
+      searchController = new SearchController(embeddings, metadata);
+      console.log('[SearchController] Ready');
+    });
+  </script>
+  <script>
     // Simple markdown to HTML converter
     function simpleMarkdown(text) {
       if (!text) return '';
@@ -694,13 +764,33 @@
     });
 
     document.getElementById('search').addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase();
-      node.style('opacity', d => {
-        return d.id.toLowerCase().includes(query) ? 1 : 0.1;
-      });
-      labels.style('opacity', d => {
-        return d.id.toLowerCase().includes(query) ? 1 : 0;
-      }).classed('visible', d => d.id.toLowerCase().includes(query));
+      const query = e.target.value.trim();
+
+      if (!query) {
+        // Reset view when search is empty
+        node.style('opacity', 1);
+        labels.style('opacity', d => 1).classed('visible', d => true);
+        return;
+      }
+
+      // Use semantic search if available, otherwise fall back to keyword
+      if (searchController) {
+        const results = searchController.search(query, 20);
+        const resultIds = new Set(results.map(r => r.pageId));
+
+        node.style('opacity', d => resultIds.has(d.id) ? 1 : 0.15);
+        labels.style('opacity', d => resultIds.has(d.id) ? 1 : 0)
+          .classed('visible', d => resultIds.has(d.id));
+      } else {
+        // Fallback to keyword matching if embeddings not loaded yet
+        const queryLower = query.toLowerCase();
+        node.style('opacity', d => {
+          return d.id.toLowerCase().includes(queryLower) ? 1 : 0.15;
+        });
+        labels.style('opacity', d => {
+          return d.id.toLowerCase().includes(queryLower) ? 1 : 0;
+        }).classed('visible', d => d.id.toLowerCase().includes(queryLower));
+      }
     });
 
     document.getElementById('resetBtn').addEventListener('click', () => {
@@ -708,7 +798,10 @@
         .duration(750)
         .call(zoom.transform, d3.zoomIdentity.translate(50, 50));
       document.getElementById('search').value = '';
+      // Trigger search event to reset filter
+      document.getElementById('search').dispatchEvent(new Event('input'));
       node.style('opacity', 1);
+      labels.style('opacity', 1).classed('visible', d => true);
       link.classed('active', false);
       document.getElementById('drawer').classList.remove('open');
     });

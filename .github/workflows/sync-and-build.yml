@@ -1,0 +1,65 @@
+name: Sync Vault & Build Website
+
+on:
+  schedule:
+    # Daily at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+        with:
+          path: website
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout private vault repo
+        uses: actions/checkout@v4
+        with:
+          repository: serialimprover/buildchain-private
+          path: vault
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install sentence-transformers numpy
+
+      - name: Transform vault content
+        run: |
+          cd website
+          python scripts/transform_vault.py ../vault
+
+      - name: Generate embeddings
+        run: |
+          cd website
+          python scripts/generate_embeddings.py
+
+      - name: Build search index
+        run: |
+          cd website
+          python scripts/build_search_index.py
+
+      - name: Generate graph data
+        run: |
+          cd website
+          python scripts/generate_graph_data.py
+
+      - name: Commit and push changes
+        run: |
+          cd website
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/graph-data.js docs/embeddings.json docs/metadata.json docs/concepts/ docs/sources/
+          git diff --cached --quiet || (git commit -m "chore: auto-sync vault and regenerate indexes" && git push)
