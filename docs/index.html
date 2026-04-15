@@ -94,12 +94,18 @@
       color: #e0e7ff;
       cursor: pointer;
       font-size: 0.9rem;
-      transition: all 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     button:hover {
       background: rgba(255, 140, 66, 0.2);
       border-color: #ff8c42;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(255, 140, 66, 0.2);
+    }
+
+    button:active {
+      transform: translateY(0);
     }
 
     .main-content {
@@ -449,6 +455,180 @@
       flex-shrink: 0;
     }
 
+    /* Filter Sidebar */
+    .filter-sidebar {
+      width: 0;
+      max-width: 280px;
+      background: linear-gradient(180deg, rgba(10, 14, 39, 0.98) 0%, rgba(10, 14, 39, 0.92) 100%);
+      border-right: 2px solid rgba(255, 165, 0, 0.25);
+      overflow-y: auto;
+      overflow-x: hidden;
+      transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(12px);
+      z-index: 40;
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .filter-sidebar.open {
+      width: 280px;
+    }
+
+    .filter-header {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 165, 0, 0.2);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .filter-header h3 {
+      color: #ff8c42;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .filter-toggle {
+      background: rgba(255, 140, 66, 0.15);
+      border: 1px solid rgba(255, 165, 0, 0.4);
+      color: #ff8c42;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.2s ease;
+    }
+
+    .filter-toggle:hover {
+      background: rgba(255, 140, 66, 0.25);
+    }
+
+    .filter-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 140, 66, 0.3) transparent;
+    }
+
+    .filter-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .filter-content::-webkit-scrollbar-thumb {
+      background: rgba(255, 140, 66, 0.3);
+      border-radius: 3px;
+    }
+
+    .filter-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .filter-group-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffa500;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+      padding: 0.5rem 0.6rem;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border-radius: 6px;
+    }
+
+    .tag-checkbox input {
+      cursor: pointer;
+      accent-color: #ff8c42;
+      width: 16px;
+      height: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .tag-checkbox input:checked {
+      transform: scale(1.1);
+    }
+
+    .tag-checkbox label {
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: rgba(224, 231, 255, 0.85);
+      flex: 1;
+      transition: color 0.2s ease;
+    }
+
+    .tag-count {
+      font-size: 0.8rem;
+      color: rgba(224, 231, 255, 0.5);
+      margin-left: auto;
+      transition: all 0.2s ease;
+      min-width: 24px;
+      text-align: right;
+    }
+
+    .tag-checkbox:hover {
+      background: rgba(255, 140, 66, 0.1);
+      transform: translateX(4px);
+    }
+
+    .tag-checkbox input:checked + label {
+      color: #ffa500;
+      font-weight: 500;
+    }
+
+    .filter-actions {
+      padding: 1rem;
+      border-top: 1px solid rgba(255, 165, 0, 0.2);
+      flex-shrink: 0;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .filter-actions button {
+      flex: 1;
+      padding: 0.6rem;
+      background: rgba(255, 140, 66, 0.15);
+      border: 1px solid rgba(255, 165, 0, 0.4);
+      color: #ff8c42;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .filter-actions button:hover {
+      background: rgba(255, 140, 66, 0.25);
+      border-color: #ff8c42;
+    }
+
+    /* Badge animation */
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
     @media (max-width: 1024px) {
       .content-drawer.open {
         width: 100%;
@@ -457,6 +637,15 @@
       .stats,
       .legend {
         display: none;
+      }
+
+      .filter-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        max-width: 100%;
+        z-index: 200;
       }
     }
   </style>
@@ -470,6 +659,7 @@
           <input type="text" class="search-input" id="search" placeholder="Search concepts...">
         </div>
         <div class="controls">
+          <button id="toggleFilter" title="Toggle filters">🏷️ Filters <span id="filterBadge" style="display: none; margin-left: 0.4rem; background: #ff8c42; color: #0a0e27; border-radius: 10px; padding: 0 0.6rem; font-size: 0.8rem; font-weight: 600;"></span></button>
           <button id="resetBtn">Reset View</button>
           <button id="togglePhysics">Physics: ON</button>
         </div>
@@ -477,6 +667,19 @@
     </header>
 
     <div class="main-content">
+      <div class="filter-sidebar" id="filterSidebar">
+        <div class="filter-header">
+          <h3>Filters</h3>
+          <button class="filter-toggle" id="closeFilter">✕</button>
+        </div>
+        <div class="filter-content" id="filterContent">
+          <!-- Tag groups will be populated here -->
+        </div>
+        <div class="filter-actions">
+          <button id="clearFilters">Clear All</button>
+        </div>
+      </div>
+
       <div id="graphContainer"></div>
 
       <div class="content-drawer" id="drawer">
@@ -515,6 +718,156 @@
   </div>
 
   <script src="graph-data.js"></script>
+  <script>
+    // Phase 2: Tag Filtering Controller
+    class TagFilterController {
+      constructor(nodes) {
+        this.nodes = nodes;
+        this.selectedTags = new Set();
+        this.tagGroups = this.extractTagGroups();
+        this.init();
+      }
+
+      extractTagGroups() {
+        const groups = {};
+        const tagCategories = {
+          'hub': 'Navigation',
+          'npi': 'NPI Process',
+          'standards': 'Standards',
+          'quality': 'Quality',
+          'design': 'Design',
+          'production': 'Production',
+          'process': 'Process',
+          'source': 'Source Type',
+          'testing': 'Testing',
+          'analysis': 'Analysis',
+          'it-systems': 'IT Systems',
+          'digital-tools': 'Digital Tools',
+          'change-management': 'Change Mgmt',
+          'supplier': 'Supplier',
+          'integration': 'Integration',
+          'digital-thread': 'Digital Thread',
+          'bom': 'BOM',
+          'cm': 'Configuration',
+          'reviews': 'Reviews',
+          'gates': 'Gates',
+          'inspection': 'Inspection',
+          'approval': 'Approval',
+          'risk': 'Risk',
+          'overview': 'Overview',
+          'aerospace': 'Aerospace',
+          'configuration': 'Configuration',
+          'navigation': 'Navigation',
+          'validation': 'Validation',
+          'methodology': 'Methodology',
+          'thinking': 'Thinking'
+        };
+
+        for (const node of this.nodes) {
+          if (node.tags && Array.isArray(node.tags)) {
+            for (const tag of node.tags) {
+              if (!groups[tag]) {
+                groups[tag] = {
+                  label: tagCategories[tag] || tag,
+                  count: 0,
+                  category: tag.includes('-') ? tag.split('-')[0] : 'other'
+                };
+              }
+              groups[tag].count++;
+            }
+          }
+        }
+
+        return groups;
+      }
+
+      init() {
+        this.renderFilterUI();
+        document.getElementById('toggleFilter').addEventListener('click', () => this.toggleSidebar());
+        document.getElementById('closeFilter').addEventListener('click', () => this.toggleSidebar(false));
+        document.getElementById('clearFilters').addEventListener('click', () => this.clearAll());
+      }
+
+      renderFilterUI() {
+        const filterContent = document.getElementById('filterContent');
+        const grouped = {};
+
+        // Group tags by category
+        for (const [tag, info] of Object.entries(this.tagGroups)) {
+          const category = info.label.split(' ')[0] || 'Other';
+          if (!grouped[category]) grouped[category] = [];
+          grouped[category].push({ tag, ...info });
+        }
+
+        let html = '';
+        for (const [category, tags] of Object.entries(grouped)) {
+          html += `<div class="filter-group">
+            <div class="filter-group-title">${category}</div>
+            ${tags.map(t => `
+              <div class="tag-checkbox">
+                <input type="checkbox" id="tag-${t.tag}" value="${t.tag}" class="tag-filter">
+                <label for="tag-${t.tag}">${t.label}</label>
+                <span class="tag-count">${t.count}</span>
+              </div>
+            `).join('')}
+          </div>`;
+        }
+
+        filterContent.innerHTML = html;
+
+        // Add event listeners
+        document.querySelectorAll('.tag-filter').forEach(checkbox => {
+          checkbox.addEventListener('change', () => this.handleFilterChange());
+        });
+      }
+
+      handleFilterChange() {
+        this.selectedTags = new Set(
+          Array.from(document.querySelectorAll('.tag-filter:checked'))
+            .map(cb => cb.value)
+        );
+        this.updateBadge();
+        window.applyFilters();
+      }
+
+      updateBadge() {
+        const badge = document.getElementById('filterBadge');
+        if (this.selectedTags.size > 0) {
+          badge.textContent = this.selectedTags.size;
+          badge.style.display = 'inline-block';
+          badge.style.animation = 'fadeInScale 0.3s ease';
+        } else {
+          badge.style.display = 'none';
+        }
+      }
+
+      toggleSidebar(open = null) {
+        const sidebar = document.getElementById('filterSidebar');
+        if (open === null) open = !sidebar.classList.contains('open');
+        sidebar.classList.toggle('open', open);
+      }
+
+      clearAll() {
+        document.querySelectorAll('.tag-filter').forEach(cb => cb.checked = false);
+        this.selectedTags.clear();
+        window.applyFilters();
+      }
+
+      getVisibleNodeIds() {
+        if (this.selectedTags.size === 0) return new Set(this.nodes.map(n => n.id));
+        return new Set(
+          this.nodes
+            .filter(n => {
+              if (!n.tags || n.tags.length === 0) return false;
+              return n.tags.some(tag => this.selectedTags.has(tag));
+            })
+            .map(n => n.id)
+        );
+      }
+    }
+
+    let tagFilterController = null;
+  </script>
   <script>
     // Phase 3: Semantic Search Controller
     class SearchController {
@@ -674,6 +1027,7 @@
       .append('circle')
       .attr('class', d => `node node-${d.type.toLowerCase()}`)
       .attr('r', d => d.type === 'MOC' ? 16 : 12)
+      .attr('data-id', d => d.id)
       .call(d3.drag()
         .on('start', dragStarted)
         .on('drag', dragged)
@@ -684,11 +1038,49 @@
       .enter()
       .append('text')
       .attr('class', 'node-label')
+      .attr('data-id', d => d.id)
       .attr('dy', d => d.type === 'MOC' ? -24 : -18)
       .text(d => d.id);
 
     document.getElementById('nodeCount').textContent = graphData.nodes.length;
     document.getElementById('linkCount').textContent = graphData.links.length;
+
+    // Initialize tag filter controller
+    tagFilterController = new TagFilterController(graphData.nodes);
+
+    // Apply filters function
+    window.applyFilters = function() {
+      const visibleIds = tagFilterController.getVisibleNodeIds();
+      const searchQuery = document.getElementById('search').value.trim().toLowerCase();
+
+      node.style('opacity', d => {
+        if (!visibleIds.has(d.id)) return 0.15;
+        if (searchQuery) {
+          if (searchController) {
+            const results = searchController.search(searchQuery, 100);
+            return results.some(r => r.pageId === d.id) ? 1 : 0.15;
+          }
+          return d.id.toLowerCase().includes(searchQuery) ? 1 : 0.15;
+        }
+        return 1;
+      });
+
+      labels.style('opacity', d => {
+        if (!visibleIds.has(d.id)) return 0;
+        if (searchQuery) {
+          if (searchController) {
+            const results = searchController.search(searchQuery, 100);
+            return results.some(r => r.pageId === d.id) ? 1 : 0;
+          }
+          return d.id.toLowerCase().includes(searchQuery) ? 1 : 0;
+        }
+        return 1;
+      }).classed('visible', d => visibleIds.has(d.id));
+
+      link.style('opacity', d => {
+        return (visibleIds.has(d.source.id) && visibleIds.has(d.target.id)) ? 0.3 : 0.05;
+      });
+    };
 
     simulation.on('tick', () => {
       link
@@ -770,34 +1162,8 @@
       link.classed('active', false);
     });
 
-    document.getElementById('search').addEventListener('input', (e) => {
-      const query = e.target.value.trim();
-
-      if (!query) {
-        // Reset view when search is empty
-        node.style('opacity', 1);
-        labels.style('opacity', d => 1).classed('visible', d => true);
-        return;
-      }
-
-      // Use semantic search if available, otherwise fall back to keyword
-      if (searchController) {
-        const results = searchController.search(query, 20);
-        const resultIds = new Set(results.map(r => r.pageId));
-
-        node.style('opacity', d => resultIds.has(d.id) ? 1 : 0.15);
-        labels.style('opacity', d => resultIds.has(d.id) ? 1 : 0)
-          .classed('visible', d => resultIds.has(d.id));
-      } else {
-        // Fallback to keyword matching if embeddings not loaded yet
-        const queryLower = query.toLowerCase();
-        node.style('opacity', d => {
-          return d.id.toLowerCase().includes(queryLower) ? 1 : 0.15;
-        });
-        labels.style('opacity', d => {
-          return d.id.toLowerCase().includes(queryLower) ? 1 : 0;
-        }).classed('visible', d => d.id.toLowerCase().includes(queryLower));
-      }
+    document.getElementById('search').addEventListener('input', () => {
+      window.applyFilters();
     });
 
     document.getElementById('resetBtn').addEventListener('click', () => {
@@ -805,12 +1171,10 @@
         .duration(750)
         .call(zoom.transform, d3.zoomIdentity.translate(50, 50));
       document.getElementById('search').value = '';
-      // Trigger search event to reset filter
-      document.getElementById('search').dispatchEvent(new Event('input'));
-      node.style('opacity', 1);
-      labels.style('opacity', 1).classed('visible', d => true);
+      tagFilterController.clearAll();
       link.classed('active', false);
       document.getElementById('drawer').classList.remove('open');
+      tagFilterController.toggleSidebar(false);
     });
 
     let physicsOn = true;
