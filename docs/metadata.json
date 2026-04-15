@@ -1,14 +1,14 @@
 {
-  "aerospace-npi-process-overview": {
-    "title": "Aerospace NPI Process Overview",
+  "as9100d-npi-clauses": {
+    "title": "AS9100D NPI Clauses",
     "type": "concept",
     "tags": "",
     "status": "synthesized",
     "created": "2026-04-13",
     "sources": []
   },
-  "as9100d-npi-clauses": {
-    "title": "AS9100D NPI Clauses",
+  "aerospace-npi-process-overview": {
+    "title": "Aerospace NPI Process Overview",
     "type": "concept",
     "tags": "",
     "status": "synthesized",
@@ -70,5 +70,375 @@
     "status": "synthesized",
     "created": "2026-04-13",
     "sources": []
+  },
+  "6-types-of-hil-testing": {
+    "title": "What Is HIL testing?",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.opal-rt.com/blog/6-types-of-hil-testing/"
+    ]
+  },
+  "as9100-clause-guide-for-aerospace-organizations": {
+    "title": "Request a Quote",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://amtivo.com/us/resources/guides-downloads/key-aerospace-9100-clause-guide/"
+    ]
+  },
+  "applications-of-digital-twins-in-manufacturing": {
+    "title": "What is Digital Twin Technology?",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.cyngn.com/blog/applications-of-digital-twins-in-manufacturing"
+    ]
+  },
+  "best-practices-for-engineering-change-management": {
+    "title": "Overview \u2013 Best Practices for Engineering Change Management",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://technosofteng.com/blogs/guide-to-engineering-change-management/"
+    ]
+  },
+  "best-practices-for-integrating-mes-with-plm-and-erp-prescient": {
+    "title": "Why MES, PLM, and ERP Integration Matters",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.pre-scient.com/integrating-mes-with-plm-and-erp-best-practices/"
+    ]
+  },
+  "bill-of-materials-with-integrated-manufacturing": {
+    "title": "How does integration work in various industries?",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://prostep.us/blog/bill-of-material-as-a-foundation-for-plm-erp-mes-integration/"
+    ]
+  },
+  "digital-thread-in-manufacturing-connecting-cad-plm-erp-and-mes-for-integrated-product-development": {
+    "title": "Digital Thread in Manufacturing: Connecting CAD, PLM, ERP and MES for Integrated Product Development",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://sumedhastech.com/product-lifecycle-management-plm/digital-thread-in-manufacturing-cad-plm-erp-mes-integration/"
+    ]
+  },
+  "digital-twin-manufacturing-applications-benefits-and-insights": {
+    "title": "Digital Twin Manufacturing: Applications, Benefits, and Industry Insights",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.simio.com/blog/digital-twin-manufacturing-applications-benefits-and-industry-insights"
+    ]
+  },
+  "elon-musk-and-first-principles-thinking--": {
+    "title": "Elon Musk and First Principles Thinking.",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.supplychaintoday.com/elon-musk-and-first-principles-thinking/"
+    ]
+  },
+  "engineering-change-order-eco-definition-types-process-and-example": {
+    "title": "What Is an Engineering Change Order (ECO)?",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://simplerqms.com/engineering-change-order/"
+    ]
+  },
+  "engineering-change-management-definition-process-and-best-practices": {
+    "title": "See the solution in action",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.aletiq.com/en/post/engineering-change-management"
+    ]
+  },
+  "explaining-plc-hmi--scada": {
+    "title": "Explaining PLC, HMI, and SCADA",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.gevernova.com/software/blog/plc-hmi-scada"
+    ]
+  },
+  "factory-acceptance-test-fat-explained": {
+    "title": "FAT example",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.realpars.com/blog/factory-acceptance-test"
+    ]
+  },
+  "from-iso-9001-to-as9100-what-you-need-to-know": {
+    "title": "Get Started Today",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://amtivo.com/us/resources/insights/from-iso-9001-to-as9100-what-you-need-to-know/"
+    ]
+  },
+  "generative-design-moves-engineering-from-iteration-to-innovation": {
+    "title": "At a Glance",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.designnews.com/design-engineering/ai-powered-generative-design-moves-engineering-from-iteration-to-innovation"
+    ]
+  },
+  "how-itot-convergence-is-driving-a-staffing-transformation": {
+    "title": "Converging Organizations",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.ibaset.com/how-it-ot-convergence-is-driving-a-staffing-transformation/"
+    ]
+  },
+  "how-the-three-main-key-pillars-plm-erp-mes-help-manufacturers": {
+    "title": "Introduction:",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://neelsmartec.com/2021/08/03/plm-erp-mes/"
+    ]
+  },
+  "how-to-automate-hmi-systems-testing": {
+    "title": "Employing automated software testing tools to HMI systems",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.keysight.com/hk/en/use-cases/automate-ivi-systems-testing.html"
+    ]
+  },
+  "itot-convergence-a-complete-guide": {
+    "title": "Bridging the Gap Between IT & OT on the Factory Floor",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://orise.com/it-ot-convergence-explained/"
+    ]
+  },
+  "implementing-unified-namespace-uns-with-mqtt-sparkplug": {
+    "title": "Implementing Unified Namespace (UNS) With MQTT Sparkplug",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.hivemq.com/blog/implementing-unified-namespace-uns-mqtt-sparkplug/"
+    ]
+  },
+  "integrating-scada-systems-into-unified-namespace": {
+    "title": "Integrating SCADA Systems into Unified Namespace",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.hivemq.com/blog/integrating-scada-system-into-unified-namespace-iiot/"
+    ]
+  },
+  "otit-convergence-and-physical-ai-innovation": {
+    "title": "OTIT Convergence and Physical AI Innovation",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.hcltech.com/trends-and-insights/otit-convergence-enabling-next-wave-innovation-physical-ai"
+    ]
+  },
+  "optimize-your-parts-inventory-to-reduce-obsolescence-risk": {
+    "title": "The high cost of unplanned downtime",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://ats-service.com/blog/reduce-parts-obsolescence-risk"
+    ]
+  },
+  "plc-and-scada-understanding-the-differences-in-industrial-automation-systems": {
+    "title": "What is a Programmable Logic Controller?",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.lselectricamerica.com/blog/plc-and-scada/"
+    ]
+  },
+  "role-of-digital-twin-technology-in-industry-40": {
+    "title": "Understanding Digital Twin Technology",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.simio.com/blog/role-of-digital-twin-technology-in-industry-4-0"
+    ]
+  },
+  "scraps-and-waste-inventory-management-in-manufacturing-operations": {
+    "title": "Precision Scrap Tracking.Maximum Material Recovery.Leaner Production Lines.",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.oxmaint.com/blog/post/scraps-waste-inventory-management-manufacturing"
+    ]
+  },
+  "the-architects-guide-to-unified-namespace-uns-implementation-roadmap": {
+    "title": "The Architect's Guide to Unified Namespace: From Automation Pyramid to Real-Time Event Architecture",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://proxus.io/blog/unified-namespace-architecture-guide/"
+    ]
+  },
+  "the-roles-of-erp-and-plm-in-manufacturing---now-with-mes": {
+    "title": "The Roles of ERP and PLM in Manufacturing - now with MES!",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://tech-clarity.com/erp-plm-mes/1095"
+    ]
+  },
+  "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40": {
+    "title": "Abstract",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10246533/"
+    ]
+  },
+  "thread-by-ansubkhan": {
+    "title": "Thread by @ansubkhan",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://x.com/ansubkhan/status/2043723975025664474"
+    ]
+  },
+  "top-tips-for-mastering-successful-engineering-change-management": {
+    "title": "Mastering Engineering Change Management: Tips for Success",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.artsyltech.com/blog/mastering-engineering-change-management"
+    ]
+  },
+  "toyota-vs-tesla-what-manufacturing-mindsets-reveal-about-quality-and-culture": {
+    "title": "The Same Building, Three Very Different Cultures",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.leanblog.org/2026/03/toyota-vs-tesla-manufacturing/"
+    ]
+  },
+  "unified-namespace-mqtt-at-a-glance": {
+    "title": "MQTT in Unified Namespace at a glance",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://ttpsc.com/en/blog/unified-namespace-mqtt-best-practices/"
+    ]
+  },
+  "untitled": {
+    "title": "Untitled",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://ptc-p-001.sitecorecontenthub.cloud/api/public/content/PTC_Guide-to-Connected-Systems-PLM-ERP-MES?v=41f59fc5"
+    ]
+  },
+  "what-is-obsolete-inventory-and-how-to-prevent-it": {
+    "title": "What is obsolete inventory?",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.mrpeasy.com/blog/obsolete-inventory/"
+    ]
+  },
+  "what-is-engineering-change-management": {
+    "title": "Introduction",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://visuresolutions.com/plm-guide/engineering-change-management/"
+    ]
+  },
+  "what-is-hardware-in-the-loop-testing": {
+    "title": "Components in a Hardware-in-the-Loop Simulation",
+    "type": "source",
+    "tags": "",
+    "status": "raw",
+    "created": "2026-04-13",
+    "sources": [
+      "https://www.ansys.com/simulation-topics/what-is-hardware-in-the-loop-testing"
+    ]
   }
 }
