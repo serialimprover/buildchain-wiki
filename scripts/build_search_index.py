@@ -11,7 +11,7 @@ from datetime import datetime
 
 
 def extract_frontmatter(content: str) -> Dict[str, Any]:
-    """Parse YAML frontmatter from markdown."""
+    """Parse YAML frontmatter from markdown - handles both inline and multi-line lists."""
     if not content.startswith('---'):
         return {}
 
@@ -27,18 +27,45 @@ def extract_frontmatter(content: str) -> Dict[str, Any]:
 
     fm_lines = lines[1:end_idx]
     fm = {}
+    i = 0
 
-    for line in fm_lines:
-        if ':' in line:
-            key, val = line.split(':', 1)
-            key = key.strip()
-            val = val.strip().strip('"\'')
+    while i < len(fm_lines):
+        line = fm_lines[i]
+        if ':' not in line:
+            i += 1
+            continue
 
-            # Parse lists (tags)
-            if key == 'tags' and val.startswith('['):
-                fm[key] = json.loads(val)
-            else:
-                fm[key] = val
+        key, val = line.split(':', 1)
+        key = key.strip()
+        val = val.strip().strip('"\'')
+
+        # Handle multi-line YAML lists (tags, sources)
+        if key in ['tags', 'sources'] and not val:
+            items = []
+            i += 1
+            while i < len(fm_lines):
+                next_line = fm_lines[i]
+                if next_line.startswith('  - '):
+                    # YAML list item
+                    item = next_line[4:].strip().strip('"\'')
+                    items.append(item)
+                    i += 1
+                elif next_line.strip() and ':' in next_line:
+                    # Next key, stop collecting list items
+                    break
+                else:
+                    i += 1
+            fm[key] = items
+            continue
+
+        # Handle inline YAML lists [item1, item2]
+        if key in ['tags', 'sources'] and val.startswith('[') and val.endswith(']'):
+            items = [item.strip().strip('"\'') for item in val[1:-1].split(',')]
+            fm[key] = items
+        else:
+            fm[key] = val
+
+        i += 1
 
     return fm
 
