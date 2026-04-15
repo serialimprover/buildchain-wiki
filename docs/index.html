@@ -6,6 +6,35 @@
   <title>Build Chain Knowledge Graph</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
+    :root {
+      /* Color Palette - Modern + Exploratory */
+      --color-concept: #0891b2;        /* Teal - concept nodes */
+      --color-article: #6b7280;        /* Gray - article nodes */
+      --color-accent: #fbbf24;         /* Amber - hover/selected */
+      --color-background: #f9fafb;    /* Light neutral - backgrounds */
+      --color-text-primary: #1f2937;   /* Dark gray - main text */
+      --color-text-secondary: #6b7280; /* Medium gray - secondary text */
+      --color-border: #e5e7eb;         /* Light gray - borders */
+      --color-disabled: #d1d5db;       /* Light gray - disabled */
+
+      /* Typography */
+      --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --font-size-h1: 2rem;
+      --font-size-h2: 1.5rem;
+      --font-size-h3: 1.125rem;
+      --font-size-body: 1rem;
+      --font-size-small: 0.875rem;
+      --line-height-body: 1.5;
+
+      /* Spacing Scale */
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+    }
+
     * {
       margin: 0;
       padding: 0;
