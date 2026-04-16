@@ -685,6 +685,7 @@
       <div class="content-drawer" id="drawer">
         <div class="drawer-header">
           <button class="close-drawer" id="closeDrawer">← Close</button>
+          <div id="drawerBreadcrumb" style="font-size: 0.8rem; color: rgba(224, 231, 255, 0.6); margin-bottom: 0.5rem; display: none;"></div>
           <h2 id="drawerTitle"></h2>
           <div class="drawer-meta" id="drawerMeta"></div>
         </div>
@@ -718,6 +719,139 @@
   </div>
 
   <script src="graph-data.js"></script>
+  <script>
+    // Phase 3: Relationship Explorer
+    class RelationshipExplorer {
+      constructor(nodes, links) {
+        this.nodes = nodes;
+        this.links = links;
+        this.nodeMap = new Map(nodes.map(n => [n.id, n]));
+        this.navigationHistory = [];
+      }
+
+      getRelationships(nodeId) {
+        const node = this.nodeMap.get(nodeId);
+        if (!node) return { incoming: [], outgoing: [], distance2: new Set() };
+
+        // Find direct connections
+        const connected = new Set();
+        const outgoing = [];
+        const incoming = [];
+
+        for (const link of this.links) {
+          if (link.source.id === nodeId || link.source === nodeId) {
+            const targetId = link.target.id || link.target;
+            outgoing.push(this.nodeMap.get(targetId));
+            connected.add(targetId);
+          }
+          if (link.target.id === nodeId || link.target === nodeId) {
+            const sourceId = link.source.id || link.source;
+            incoming.push(this.nodeMap.get(sourceId));
+            connected.add(sourceId);
+          }
+        }
+
+        // Find 2-degree connections
+        const distance2 = new Set();
+        for (const connId of connected) {
+          for (const link of this.links) {
+            if ((link.source.id || link.source) === connId) {
+              const targetId = link.target.id || link.target;
+              if (targetId !== nodeId && !connected.has(targetId)) distance2.add(targetId);
+            }
+            if ((link.target.id || link.target) === connId) {
+              const sourceId = link.source.id || link.source;
+              if (sourceId !== nodeId && !connected.has(sourceId)) distance2.add(sourceId);
+            }
+          }
+        }
+
+        return {
+          incoming: incoming.filter(Boolean),
+          outgoing: outgoing.filter(Boolean),
+          distance2: Array.from(distance2).map(id => this.nodeMap.get(id)).filter(Boolean)
+        };
+      }
+
+      renderRelationships(nodeId) {
+        const rels = this.getRelationships(nodeId);
+        const incomingCount = rels.incoming.length;
+        const outgoingCount = rels.outgoing.length;
+        const distance2Count = rels.distance2.length;
+
+        let html = `<div style="display: flex; gap: 0.8rem; margin-bottom: 1rem;">
+          <div style="flex: 1; padding: 0.6rem; background: rgba(138, 43, 226, 0.1); border-radius: 6px; border-left: 3px solid #8a2be2;">
+            <div style="font-size: 0.8rem; color: rgba(224, 231, 255, 0.6); text-transform: uppercase; font-weight: 600;">Incoming</div>
+            <div style="font-size: 1.4rem; color: #b366ff; font-weight: 700;">${incomingCount}</div>
+          </div>
+          <div style="flex: 1; padding: 0.6rem; background: rgba(50, 205, 50, 0.1); border-radius: 6px; border-left: 3px solid #32cd32;">
+            <div style="font-size: 0.8rem; color: rgba(224, 231, 255, 0.6); text-transform: uppercase; font-weight: 600;">Outgoing</div>
+            <div style="font-size: 1.4rem; color: #90ee90; font-weight: 700;">${outgoingCount}</div>
+          </div>
+          <div style="flex: 1; padding: 0.6rem; background: rgba(100, 149, 237, 0.1); border-radius: 6px; border-left: 3px solid #6495ed;">
+            <div style="font-size: 0.8rem; color: rgba(224, 231, 255, 0.6); text-transform: uppercase; font-weight: 600;">2-Hops</div>
+            <div style="font-size: 1.4rem; color: #87ceeb; font-weight: 700;">${distance2Count}</div>
+          </div>
+        </div>`;
+
+        if (rels.incoming.length > 0) {
+          html += `<div style="margin-bottom: 1.5rem;">
+            <h4 style="color: #b366ff; font-size: 0.95rem; margin-bottom: 0.8rem;">← References (${incomingCount})</h4>
+            <div class="related-links">
+              ${rels.incoming.map(n => `
+                <button class="related-link" onclick="loadNode('${n.id}')" style="border-left: 3px solid #8a2be2;">
+                  ${n.id}
+                  <span style="font-size: 0.75rem; color: rgba(224, 231, 255, 0.5);">${n.type}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>`;
+        }
+
+        if (rels.outgoing.length > 0) {
+          html += `<div style="margin-bottom: 1.5rem;">
+            <h4 style="color: #90ee90; font-size: 0.95rem; margin-bottom: 0.8rem;">→ Links To (${outgoingCount})</h4>
+            <div class="related-links">
+              ${rels.outgoing.map(n => `
+                <button class="related-link" onclick="loadNode('${n.id}')" style="border-left: 3px solid #32cd32;">
+                  ${n.id}
+                  <span style="font-size: 0.75rem; color: rgba(224, 231, 255, 0.5);">${n.type}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>`;
+        }
+
+        if (rels.distance2.length > 0) {
+          html += `<div>
+            <h4 style="color: #87ceeb; font-size: 0.95rem; margin-bottom: 0.8rem;">◆ Distance 2 (${distance2Count})</h4>
+            <div class="related-links">
+              ${rels.distance2.slice(0, 8).map(n => `
+                <button class="related-link" onclick="loadNode('${n.id}')" style="opacity: 0.75; border-left: 3px solid #6495ed;">
+                  ${n.id}
+                  <span style="font-size: 0.75rem; color: rgba(224, 231, 255, 0.4);">${n.type}</span>
+                </button>
+              `).join('')}
+              ${rels.distance2.length > 8 ? `<div style="padding: 0.6rem; color: rgba(224, 231, 255, 0.4); font-size: 0.85rem;">+${rels.distance2.length - 8} more</div>` : ''}
+            </div>
+          </div>`;
+        }
+
+        return html;
+      }
+
+      trackNavigation(nodeId) {
+        this.navigationHistory.push(nodeId);
+        if (this.navigationHistory.length > 10) this.navigationHistory.shift();
+      }
+
+      getBreadcrumbs() {
+        return this.navigationHistory.slice(-3);
+      }
+    }
+
+    let relationshipExplorer = null;
+  </script>
   <script>
     // Phase 2: Tag Filtering Controller
     class TagFilterController {
@@ -935,7 +1069,9 @@
       fetch('metadata.json').then(r => r.json()).catch(() => ({}))
     ]).then(([embeddings, metadata]) => {
       searchController = new SearchController(embeddings, metadata);
+      relationshipExplorer = new RelationshipExplorer(graphData.nodes, graphData.links);
       console.log('[SearchController] Ready');
+      console.log('[RelationshipExplorer] Ready');
     });
   </script>
   <script>
@@ -1103,7 +1239,24 @@
       const contentDiv = document.getElementById('drawerContent');
 
       document.getElementById('drawerTitle').textContent = d.id;
-      document.getElementById('drawerMeta').innerHTML = `<span class="badge">${d.type.toUpperCase()}</span><span class="badge">${d.category}</span>`;
+      const tagBadges = d.tags && d.tags.length > 0
+        ? d.tags.map(tag => `<span class="badge">${tag}</span>`).join('')
+        : '';
+      document.getElementById('drawerMeta').innerHTML = `<span class="badge">${d.type.toUpperCase()}</span>${tagBadges}`;
+
+      // Render breadcrumbs
+      if (relationshipExplorer) {
+        const breadcrumbs = relationshipExplorer.getBreadcrumbs();
+        const breadcrumbEl = document.getElementById('drawerBreadcrumb');
+        if (breadcrumbs.length > 1) {
+          breadcrumbEl.innerHTML = breadcrumbs.slice(0, -1).map((id, i) =>
+            `<a href="javascript:loadNode('${id}')" style="color: #ff8c42; text-decoration: none; cursor: pointer; hover: underline;">${id}</a>`
+          ).join(' <span style="color: rgba(224, 231, 255, 0.4);">→</span> ');
+          breadcrumbEl.style.display = 'block';
+        } else {
+          breadcrumbEl.style.display = 'none';
+        }
+      }
 
       // Clear and render content
       if (d.content) {
@@ -1113,22 +1266,11 @@
         contentDiv.innerHTML = '<p>No content available for this node.</p>';
       }
 
-      const connections = graphData.links.filter(link =>
-        link.source === d || link.target === d
-      ).map(link => link.source === d ? link.target : link.source);
-
-      if (connections.length > 0) {
-        const relatedHtml = `
-          <h4>Connected Concepts</h4>
-          <div class="related-links">
-            ${connections.map(node => `
-              <button class="related-link" onclick="loadNode('${node.id}')">${node.id}</button>
-            `).join('')}
-          </div>
-        `;
-        document.getElementById('relatedNodes').innerHTML = relatedHtml;
-      } else {
-        document.getElementById('relatedNodes').innerHTML = '';
+      // Render enhanced relationships
+      if (relationshipExplorer) {
+        const relHtml = relationshipExplorer.renderRelationships(d.id);
+        document.getElementById('relatedNodes').innerHTML = relHtml;
+        relationshipExplorer.trackNavigation(d.id);
       }
 
       drawer.classList.add('open');
