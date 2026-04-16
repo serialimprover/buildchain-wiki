@@ -212,6 +212,7 @@ def build_graph():
                 'title': title,
                 'type': 'concept',
                 'description': description,
+                'content': body.strip(),
                 'tags': tags,
                 'status': fm.get('status', 'published'),
                 'url': f'/concepts/{page_id}',

@@ -1324,10 +1324,10 @@
         }
       }
 
-      // Clear and render content
-      if (d.description) {
-        const html = simpleMarkdown(d.description);
-        contentDiv.innerHTML = html;
+      // Clear and render content — use full body for concepts, description for sources
+      const body = d.content || d.description;
+      if (body) {
+        contentDiv.innerHTML = simpleMarkdown(body);
       } else {
         contentDiv.innerHTML = '<p>No content available for this node.</p>';
       }
