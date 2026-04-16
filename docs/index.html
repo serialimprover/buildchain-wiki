@@ -4,21 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Build Chain Knowledge Graph</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
     :root {
-      /* Industrial Color Palette */
-      --color-rust: #b85c3c;           /* Warm rust orange */
-      --color-rust-light: #d97d3e;     /* Lighter rust accent */
-      --color-steel: #4a7c9e;          /* Cool steel blue */
-      --color-sage: #6b8e5a;           /* Muted sage green */
-      --color-ochre: #c9a86a;          /* Warm ochre/tan */
-      --color-plum: #7b5b8f;           /* Muted purple */
-      --color-dark: #1a1a1a;           /* Charcoal background */
-      --color-dark-light: #252525;     /* Lighter dark surface */
-      --color-text: #e8e6e1;           /* Warm light text */
-      --color-text-dim: #a8a49d;       /* Dimmed text */
-      --color-border: #3a3a3a;         /* Subtle borders */
+      /* Industrial Palette */
+      --rust:        #e85d2f;
+      --amber:       #f0b429;
+      --blueprint:   #2d9cdb;
+      --dark-bg:     #111111;
+      --dark-surf:   #1c1c1c;
+      --dark-raise:  #242424;
+      --border:      #2e2e2e;
+      --border-hi:   #3d3d3d;
+      --text:        #f0ece4;
+      --text-dim:    #8a8580;
+      --text-dimmer: #555050;
+      /* legacy aliases */
+      --color-rust: #e85d2f;
+      --color-rust-light: #f0b429;
+      --color-dark: #111111;
+      --color-dark-light: #1c1c1c;
+      --color-text: #f0ece4;
+      --color-text-dim: #8a8580;
+      --color-border: #2e2e2e;
 
       /* Typography */
       --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
@@ -45,9 +55,11 @@
     }
 
     body {
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-      color: var(--color-text);
+      font-family: 'Barlow', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #111;
+      background-image: radial-gradient(circle, #252525 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--text);
       overflow: hidden;
       height: 100vh;
     }
@@ -77,11 +89,22 @@
     }
 
     h1 {
-      font-size: 1.9rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--color-rust-light);
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rust);
+    }
+    h1::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1em;
+      background: var(--rust);
+      margin-right: 10px;
+      vertical-align: middle;
+      border-radius: 1px;
     }
 
     .search-container {
@@ -117,22 +140,26 @@
     }
 
     button {
-      padding: 0.7rem 1.2rem;
-      background: var(--color-dark-light);
-      border: 1.5px solid var(--color-rust);
-      border-radius: 4px;
-      color: var(--color-rust-light);
-      cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
       font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.5rem 1.1rem;
+      background: var(--dark-raise);
+      border: 1.5px solid var(--border-hi);
+      border-radius: 3px;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
     button:hover {
-      background: var(--color-rust);
-      color: var(--color-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(217, 125, 62, 0.3);
+      background: var(--rust);
+      border-color: var(--rust);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(232, 93, 47, 0.4);
     }
 
     button:active {
@@ -170,14 +197,18 @@
     }
 
     .node-label {
-      font-size: 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
       font-weight: 600;
+      letter-spacing: 0.3px;
       text-anchor: middle;
       pointer-events: none;
-      fill: var(--color-dark);
-      text-shadow: 0 1px 2px rgba(232, 230, 225, 0.8);
+      fill: #f0ece4;
       opacity: 0;
       transition: opacity 0.2s ease;
+      paint-order: stroke;
+      stroke: #111;
+      stroke-width: 3px;
     }
 
     .node:hover + .node-label,
@@ -434,46 +465,38 @@
     }
 
     .stat-value {
-      color: var(--color-rust-light);
+      color: var(--amber);
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
     /* Type-specific colors - Industrial palette */
-    .node-moc {
-      fill: #8b4513;
-      stroke: #d97d3e;
-    }
-
+    /* concept = blueprint blue */
     .node-concept {
-      fill: #4a7c9e;
-      stroke: #6a9cc4;
+      fill: #1a5f8a;
+      stroke: #2d9cdb;
     }
 
-    .node-clip {
-      fill: #9b6f47;
-      stroke: #c9a86a;
+    /* source = amber — visible against dark bg */
+    .node-source {
+      fill: #7a5510;
+      stroke: #f0b429;
     }
 
-    .node-plan {
-      fill: #5a7a4a;
-      stroke: #8aaa7a;
-    }
-
-    .node-brainstorm {
-      fill: #6b5b8f;
-      stroke: #9b7bbf;
-    }
+    .node-moc        { fill: #8b2510; stroke: #e85d2f; }
+    .node-clip       { fill: #7a5510; stroke: #f0b429; }
+    .node-plan       { fill: #1a5035; stroke: #3dba6e; }
+    .node-brainstorm { fill: #4a2870; stroke: #9b59b6; }
 
     .legend {
       position: fixed;
       top: 5rem;
       right: 2rem;
       background: rgba(25, 25, 25, 0.98);
-      border: 1.5px solid var(--color-rust);
-      border-radius: 4px;
-      padding: 1.2rem;
-      backdrop-filter: blur(10px);
+      border: 1.5px solid var(--border-hi);
+      border-left: 3px solid var(--blueprint);
+      border-radius: 3px;
+      padding: 1rem;
       z-index: 50;
     }
 
@@ -508,8 +531,8 @@
     .filter-sidebar {
       width: 0;
       max-width: 280px;
-      background: linear-gradient(180deg, rgba(10, 14, 39, 0.98) 0%, rgba(10, 14, 39, 0.92) 100%);
-      border-right: 2px solid rgba(255, 165, 0, 0.25);
+      background: var(--dark-surf);
+      border-right: 2px solid var(--rust);
       overflow-y: auto;
       overflow-x: hidden;
       transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -526,24 +549,27 @@
 
     .filter-header {
       padding: 1rem 1.2rem;
-      border-bottom: 1px solid rgba(255, 165, 0, 0.2);
+      border-bottom: 1px solid var(--border);
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
     }
 
     .filter-header h3 {
-      color: #ff8c42;
-      font-size: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--rust);
       margin: 0;
     }
 
     .filter-toggle {
-      background: rgba(255, 140, 66, 0.15);
-      border: 1px solid rgba(255, 165, 0, 0.4);
-      color: #ff8c42;
+      background: var(--dark-raise);
+      border: 1px solid var(--border-hi);
+      color: var(--text-dim);
       width: 28px;
       height: 28px;
       padding: 0;
@@ -557,7 +583,7 @@
     }
 
     .filter-toggle:hover {
-      background: rgba(255, 140, 66, 0.25);
+      background: var(--dark-raise);
     }
 
     .filter-content {
@@ -565,7 +591,7 @@
       overflow-y: auto;
       padding: 1rem;
       scrollbar-width: thin;
-      scrollbar-color: rgba(255, 140, 66, 0.3) transparent;
+      scrollbar-color: var(--border-hi) transparent;
     }
 
     .filter-content::-webkit-scrollbar {
@@ -573,7 +599,7 @@
     }
 
     .filter-content::-webkit-scrollbar-thumb {
-      background: rgba(255, 140, 66, 0.3);
+      background: var(--border-hi);
       border-radius: 3px;
     }
 
@@ -583,11 +609,12 @@
 
     .filter-group-title {
       font-size: 0.85rem;
-      font-weight: 600;
-      color: #ffa500;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      color: var(--text-dim);
       text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
     }
 
     .tag-checkbox {
@@ -604,7 +631,7 @@
 
     .tag-checkbox input {
       cursor: pointer;
-      accent-color: #ff8c42;
+      accent-color: var(--rust);
       width: 16px;
       height: 16px;
       transition: all 0.2s ease;
@@ -617,14 +644,14 @@
     .tag-checkbox label {
       cursor: pointer;
       font-size: 0.9rem;
-      color: rgba(224, 231, 255, 0.85);
+      color: var(--text-dim);
       flex: 1;
       transition: color 0.2s ease;
     }
 
     .tag-count {
       font-size: 0.8rem;
-      color: rgba(224, 231, 255, 0.5);
+      color: var(--text-dimmer);
       margin-left: auto;
       transition: all 0.2s ease;
       min-width: 24px;
@@ -632,38 +659,29 @@
     }
 
     .tag-checkbox:hover {
-      background: rgba(255, 140, 66, 0.1);
-      transform: translateX(4px);
+      background: var(--dark-raise);
     }
 
     .tag-checkbox input:checked + label {
-      color: #ffa500;
-      font-weight: 500;
+      color: var(--text);
     }
 
     .filter-actions {
       padding: 1rem;
-      border-top: 1px solid rgba(255, 165, 0, 0.2);
+      border-top: 1px solid var(--border);
       flex-shrink: 0;
-      display: flex;
-      gap: 0.5rem;
     }
 
     .filter-actions button {
       flex: 1;
       padding: 0.6rem;
-      background: rgba(255, 140, 66, 0.15);
-      border: 1px solid rgba(255, 165, 0, 0.4);
-      color: #ff8c42;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      transition: all 0.2s ease;
+      flex: 1;
     }
 
     .filter-actions button:hover {
-      background: rgba(255, 140, 66, 0.25);
-      border-color: #ff8c42;
+      background: var(--rust);
+      border-color: var(--rust);
+      color: #fff;
     }
 
     /* Badge animation */
@@ -708,7 +726,7 @@
           <input type="text" class="search-input" id="search" placeholder="Search concepts...">
         </div>
         <div class="controls">
-          <button id="toggleFilter" title="Toggle filters">🏷️ Filters <span id="filterBadge" style="display: none; margin-left: 0.4rem; background: #ff8c42; color: #0a0e27; border-radius: 10px; padding: 0 0.6rem; font-size: 0.8rem; font-weight: 600;"></span></button>
+          <button id="toggleFilter" title="Toggle filters">🏷️ Filters <span id="filterBadge" style="display: none; margin-left: 0.4rem; background: var(--rust); color: #fff; border-radius: 10px; padding: 0 0.6rem; font-size: 0.8rem; font-weight: 600;"></span></button>
           <button id="resetBtn">Reset View</button>
           <button id="togglePhysics">Physics: ON</button>
         </div>
@@ -734,7 +752,7 @@
       <div class="content-drawer" id="drawer">
         <div class="drawer-header">
           <button class="close-drawer" id="closeDrawer">← Close</button>
-          <div id="drawerBreadcrumb" style="font-size: 0.8rem; color: rgba(224, 231, 255, 0.6); margin-bottom: 0.5rem; display: none;"></div>
+          <div id="drawerBreadcrumb" style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 0.5rem; display: none;"></div>
           <h2 id="drawerTitle"></h2>
           <div class="drawer-meta" id="drawerMeta"></div>
         </div>
@@ -819,15 +837,15 @@
 
         let html = `<div style="display: flex; gap: 0.8rem; margin-bottom: 1rem;">
           <div style="flex: 1; padding: 0.6rem; background: rgba(138, 43, 226, 0.1); border-radius: 6px; border-left: 3px solid #8a2be2;">
-            <div style="font-size: 0.8rem; color: rgba(224, 231, 255, 0.6); text-transform: uppercase; font-weight: 600;">Incoming</div>
+            <div style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; font-weight: 600;">Incoming</div>
             <div style="font-size: 1.4rem; color: #b366ff; font-weight: 700;">${incomingCount}</div>
           </div>
           <div style="flex: 1; padding: 0.6rem; background: rgba(50, 205, 50, 0.1); border-radius: 6px; border-left: 3px solid #32cd32;">
-            <div style="font-size: 0.8rem; color: rgba(224, 231, 255, 0.6); text-transform: uppercase; font-weight: 600;">Outgoing</div>
+            <div style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; font-weight: 600;">Outgoing</div>
             <div style="font-size: 1.4rem; color: #90ee90; font-weight: 700;">${outgoingCount}</div>
           </div>
           <div style="flex: 1; padding: 0.6rem; background: rgba(100, 149, 237, 0.1); border-radius: 6px; border-left: 3px solid #6495ed;">
-            <div style="font-size: 0.8rem; color: rgba(224, 231, 255, 0.6); text-transform: uppercase; font-weight: 600;">2-Hops</div>
+            <div style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; font-weight: 600;">2-Hops</div>
             <div style="font-size: 1.4rem; color: #87ceeb; font-weight: 700;">${distance2Count}</div>
           </div>
         </div>`;
@@ -839,7 +857,7 @@
               ${rels.incoming.map(n => `
                 <button class="related-link" onclick="loadNode('${n.id}')" style="border-left: 3px solid #8a2be2;">
                   ${n.id}
-                  <span style="font-size: 0.75rem; color: rgba(224, 231, 255, 0.5);">${n.type}</span>
+                  <span style="font-size: 0.75rem; color: var(--text-dimmer);">${n.type}</span>
                 </button>
               `).join('')}
             </div>
@@ -853,7 +871,7 @@
               ${rels.outgoing.map(n => `
                 <button class="related-link" onclick="loadNode('${n.id}')" style="border-left: 3px solid #32cd32;">
                   ${n.id}
-                  <span style="font-size: 0.75rem; color: rgba(224, 231, 255, 0.5);">${n.type}</span>
+                  <span style="font-size: 0.75rem; color: var(--text-dimmer);">${n.type}</span>
                 </button>
               `).join('')}
             </div>
@@ -1172,7 +1190,7 @@
       .attr('orient', 'auto')
       .append('polygon')
       .attr('points', '0 0, 10 3, 0 6')
-      .attr('fill', '#ff8c42');
+      .attr('fill', '#e85d2f');
 
     const g = svg.append('g');
 
@@ -1296,7 +1314,7 @@
         const breadcrumbEl = document.getElementById('drawerBreadcrumb');
         if (breadcrumbs.length > 1) {
           breadcrumbEl.innerHTML = breadcrumbs.slice(0, -1).map((id, i) =>
-            `<a href="javascript:loadNode('${id}')" style="color: #ff8c42; text-decoration: none; cursor: pointer; hover: underline;">${id}</a>`
+            `<a href="javascript:loadNode('${id}')" style="color: var(--blueprint); text-decoration: none; cursor: pointer;">${id}</a>`
           ).join(' <span style="color: rgba(224, 231, 255, 0.4);">→</span> ');
           breadcrumbEl.style.display = 'block';
         } else {
