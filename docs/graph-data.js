@@ -1,28 +1,6 @@
 const graphData = {
   "nodes": [
     {
-      "id": "aerospace-npi-process-overview",
-      "title": "Aerospace NPI Process Overview",
-      "type": "concept",
-      "description": "New Product Introduction (NPI) in aerospace and defense is a highly structured, gate-driven process that takes a concept from design through production release. Unlike commercial consumer electronics",
-      "tags": [
-        "domain/aerospace",
-        "phase/NPI"
-      ],
-      "status": "synthesized",
-      "url": "/concepts/aerospace-npi-process-overview",
-      "relatedConcepts": [
-        "design-reviews--pdr-cdr-trr",
-        "as9100d-npi-clauses",
-        "ppap-in-aerospace--as9145",
-        "first-article-inspection--fai-and-fair-as9102b",
-        "moc--npi-process",
-        "moc--digital-systems",
-        "configuration-management-basics"
-      ],
-      "supportingArticles": []
-    },
-    {
       "id": "as9100d-npi-clauses",
       "title": "AS9100D NPI Clauses",
       "type": "concept",
@@ -34,13 +12,35 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/as9100d-npi-clauses",
       "relatedConcepts": [
+        "moc--npi-process",
         "design-reviews--pdr-cdr-trr",
         "ppap-in-aerospace--as9145",
-        "first-article-inspection--fai-and-fair-as9102b",
-        "moc--npi-process",
         "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b",
         "aerospace-npi-process-overview",
         "pfmea-and-dfmea"
+      ],
+      "supportingArticles": []
+    },
+    {
+      "id": "aerospace-npi-process-overview",
+      "title": "Aerospace NPI Process Overview",
+      "type": "concept",
+      "description": "New Product Introduction (NPI) in aerospace and defense is a highly structured, gate-driven process that takes a concept from design through production release. Unlike commercial consumer electronics",
+      "tags": [
+        "domain/aerospace",
+        "phase/NPI"
+      ],
+      "status": "synthesized",
+      "url": "/concepts/aerospace-npi-process-overview",
+      "relatedConcepts": [
+        "as9100d-npi-clauses",
+        "moc--npi-process",
+        "design-reviews--pdr-cdr-trr",
+        "ppap-in-aerospace--as9145",
+        "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b",
+        "moc--digital-systems"
       ],
       "supportingArticles": []
     },
@@ -55,12 +55,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/configuration-management-basics",
       "relatedConcepts": [
-        "design-reviews--pdr-cdr-trr",
         "as9100d-npi-clauses",
-        "first-article-inspection--fai-and-fair-as9102b",
         "moc--npi-process",
-        "moc--digital-systems",
-        "aerospace-npi-process-overview"
+        "design-reviews--pdr-cdr-trr",
+        "first-article-inspection--fai-and-fair-as9102b",
+        "aerospace-npi-process-overview",
+        "moc--digital-systems"
       ],
       "supportingArticles": []
     },
@@ -76,10 +76,10 @@ const graphData = {
       "url": "/concepts/design-reviews--pdr-cdr-trr",
       "relatedConcepts": [
         "as9100d-npi-clauses",
-        "ppap-in-aerospace--as9145",
-        "first-article-inspection--fai-and-fair-as9102b",
         "moc--npi-process",
+        "ppap-in-aerospace--as9145",
         "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b",
         "aerospace-npi-process-overview",
         "pfmea-and-dfmea"
       ],
@@ -97,8 +97,8 @@ const graphData = {
       "url": "/concepts/first-article-inspection--fai-and-fair-as9102b",
       "relatedConcepts": [
         "as9100d-npi-clauses",
-        "ppap-in-aerospace--as9145",
         "moc--npi-process",
+        "ppap-in-aerospace--as9145",
         "configuration-management-basics",
         "aerospace-npi-process-overview",
         "pfmea-and-dfmea"
@@ -134,12 +134,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/moc--npi-process",
       "relatedConcepts": [
-        "design-reviews--pdr-cdr-trr",
         "as9100d-npi-clauses",
-        "ppap-in-aerospace--as9145",
-        "first-article-inspection--fai-and-fair-as9102b",
         "moc--digital-systems",
+        "design-reviews--pdr-cdr-trr",
+        "ppap-in-aerospace--as9145",
         "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b",
         "aerospace-npi-process-overview",
         "pfmea-and-dfmea"
       ],
@@ -156,10 +156,10 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/pfmea-and-dfmea",
       "relatedConcepts": [
-        "design-reviews--pdr-cdr-trr",
         "as9100d-npi-clauses",
-        "ppap-in-aerospace--as9145",
         "moc--npi-process",
+        "design-reviews--pdr-cdr-trr",
+        "ppap-in-aerospace--as9145",
         "configuration-management-basics",
         "aerospace-npi-process-overview"
       ],
@@ -178,9 +178,9 @@ const graphData = {
       "url": "/concepts/ppap-in-aerospace--as9145",
       "relatedConcepts": [
         "as9100d-npi-clauses",
-        "first-article-inspection--fai-and-fair-as9102b",
         "moc--npi-process",
         "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b",
         "aerospace-npi-process-overview",
         "pfmea-and-dfmea"
       ],
@@ -199,18 +199,6 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "applications-of-digital-twins-in-manufacturing",
-      "title": "What is Digital Twin Technology?",
-      "type": "source",
-      "description": "A digital twin uses computer models, data, and analytics to create a virtual copy or mirror of a real-life object or system. By replicating it digitally, organizations are able to better understand, m",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/applications-of-digital-twins-in-manufacturing",
-      "source": "https://www.cyngn.com/blog/applications-of-digital-twins-in-manufacturing",
-      "relatedConcepts": [],
-      "supportingArticles": []
-    },
-    {
       "id": "as9100-clause-guide-for-aerospace-organizations",
       "title": "Request a Quote",
       "type": "source",
@@ -219,6 +207,18 @@ const graphData = {
       "status": "raw",
       "url": "/sources/as9100-clause-guide-for-aerospace-organizations",
       "source": "https://amtivo.com/us/resources/guides-downloads/key-aerospace-9100-clause-guide/",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
+      "id": "applications-of-digital-twins-in-manufacturing",
+      "title": "What is Digital Twin Technology?",
+      "type": "source",
+      "description": "A digital twin uses computer models, data, and analytics to create a virtual copy or mirror of a real-life object or system. By replicating it digitally, organizations are able to better understand, m",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/applications-of-digital-twins-in-manufacturing",
+      "source": "https://www.cyngn.com/blog/applications-of-digital-twins-in-manufacturing",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -303,18 +303,6 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "engineering-change-management-definition-process-and-best-practices",
-      "title": "See the solution in action",
-      "type": "source",
-      "description": "[Request a demo](https://www.aletiq.com/en/contact/book-a-meeting)",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/engineering-change-management-definition-process-and-best-practices",
-      "source": "https://www.aletiq.com/en/post/engineering-change-management",
-      "relatedConcepts": [],
-      "supportingArticles": []
-    },
-    {
       "id": "engineering-change-order-eco-definition-types-process-and-example",
       "title": "What Is an Engineering Change Order (ECO)?",
       "type": "source",
@@ -323,6 +311,18 @@ const graphData = {
       "status": "raw",
       "url": "/sources/engineering-change-order-eco-definition-types-process-and-example",
       "source": "https://simplerqms.com/engineering-change-order/",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
+      "id": "engineering-change-management-definition-process-and-best-practices",
+      "title": "See the solution in action",
+      "type": "source",
+      "description": "[Request a demo](https://www.aletiq.com/en/contact/book-a-meeting)",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/engineering-change-management-definition-process-and-best-practices",
+      "source": "https://www.aletiq.com/en/post/engineering-change-management",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -413,6 +413,18 @@ const graphData = {
       "supportingArticles": []
     },
     {
+      "id": "itot-convergence-a-complete-guide",
+      "title": "Bridging the Gap Between IT & OT on the Factory Floor",
+      "type": "source",
+      "description": "In the production plant, it can often feel like a tug of war between two sides of the process: the machines and equipment performing the physical labor, and the data, servers, and digital devices that",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/itot-convergence-a-complete-guide",
+      "source": "https://orise.com/it-ot-convergence-explained/",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
       "id": "implementing-unified-namespace-uns-with-mqtt-sparkplug",
       "title": "Implementing Unified Namespace (UNS) With MQTT Sparkplug",
       "type": "source",
@@ -437,14 +449,14 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "itot-convergence-a-complete-guide",
-      "title": "Bridging the Gap Between IT & OT on the Factory Floor",
+      "id": "otit-convergence-and-physical-ai-innovation",
+      "title": "OTIT Convergence and Physical AI Innovation",
       "type": "source",
-      "description": "In the production plant, it can often feel like a tug of war between two sides of the process: the machines and equipment performing the physical labor, and the data, servers, and digital devices that",
+      "description": "",
       "tags": [],
       "status": "raw",
-      "url": "/sources/itot-convergence-a-complete-guide",
-      "source": "https://orise.com/it-ot-convergence-explained/",
+      "url": "/sources/otit-convergence-and-physical-ai-innovation",
+      "source": "https://www.hcltech.com/trends-and-insights/otit-convergence-enabling-next-wave-innovation-physical-ai",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -457,18 +469,6 @@ const graphData = {
       "status": "raw",
       "url": "/sources/optimize-your-parts-inventory-to-reduce-obsolescence-risk",
       "source": "https://ats-service.com/blog/reduce-parts-obsolescence-risk",
-      "relatedConcepts": [],
-      "supportingArticles": []
-    },
-    {
-      "id": "otit-convergence-and-physical-ai-innovation",
-      "title": "OTIT Convergence and Physical AI Innovation",
-      "type": "source",
-      "description": "",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/otit-convergence-and-physical-ai-innovation",
-      "source": "https://www.hcltech.com/trends-and-insights/otit-convergence-enabling-next-wave-innovation-physical-ai",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -524,18 +524,6 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
-      "title": "Abstract",
-      "type": "source",
-      "description": "As the adoption of Industry 4.0 advances and the manufacturing process becomes increasingly digital, the Digital Twin (DT) will prove invaluable for testing and simulating new parameters and design va",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
-      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10246533/",
-      "relatedConcepts": [],
-      "supportingArticles": []
-    },
-    {
       "id": "the-roles-of-erp-and-plm-in-manufacturing---now-with-mes",
       "title": "The Roles of ERP and PLM in Manufacturing - now with MES!",
       "type": "source",
@@ -547,6 +535,18 @@ const graphData = {
       "status": "raw",
       "url": "/sources/the-roles-of-erp-and-plm-in-manufacturing---now-with-mes",
       "source": "https://tech-clarity.com/erp-plm-mes/1095",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
+      "id": "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
+      "title": "Abstract",
+      "type": "source",
+      "description": "As the adoption of Industry 4.0 advances and the manufacturing process becomes increasingly digital, the Digital Twin (DT) will prove invaluable for testing and simulating new parameters and design va",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10246533/",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -613,6 +613,18 @@ const graphData = {
       "supportingArticles": []
     },
     {
+      "id": "what-is-obsolete-inventory-and-how-to-prevent-it",
+      "title": "What is obsolete inventory?",
+      "type": "source",
+      "description": "Obsolete inventory is any inventory that a company can no longer sell or use due to lack of demand. This mostly occurs when goods reach the end of their product life cycle or in cases of sudden sales",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/what-is-obsolete-inventory-and-how-to-prevent-it",
+      "source": "https://www.mrpeasy.com/blog/obsolete-inventory/",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
       "id": "what-is-engineering-change-management",
       "title": "Introduction",
       "type": "source",
@@ -637,48 +649,12 @@ const graphData = {
       "source": "https://www.ansys.com/simulation-topics/what-is-hardware-in-the-loop-testing",
       "relatedConcepts": [],
       "supportingArticles": []
-    },
-    {
-      "id": "what-is-obsolete-inventory-and-how-to-prevent-it",
-      "title": "What is obsolete inventory?",
-      "type": "source",
-      "description": "Obsolete inventory is any inventory that a company can no longer sell or use due to lack of demand. This mostly occurs when goods reach the end of their product life cycle or in cases of sudden sales",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/what-is-obsolete-inventory-and-how-to-prevent-it",
-      "source": "https://www.mrpeasy.com/blog/obsolete-inventory/",
-      "relatedConcepts": [],
-      "supportingArticles": []
     }
   ],
   "links": [
     {
-      "source": "aerospace-npi-process-overview",
-      "target": "design-reviews--pdr-cdr-trr"
-    },
-    {
-      "source": "aerospace-npi-process-overview",
-      "target": "as9100d-npi-clauses"
-    },
-    {
-      "source": "aerospace-npi-process-overview",
-      "target": "ppap-in-aerospace--as9145"
-    },
-    {
-      "source": "aerospace-npi-process-overview",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
-    },
-    {
-      "source": "aerospace-npi-process-overview",
+      "source": "as9100d-npi-clauses",
       "target": "moc--npi-process"
-    },
-    {
-      "source": "aerospace-npi-process-overview",
-      "target": "moc--digital-systems"
-    },
-    {
-      "source": "aerospace-npi-process-overview",
-      "target": "configuration-management-basics"
     },
     {
       "source": "as9100d-npi-clauses",
@@ -690,15 +666,11 @@ const graphData = {
     },
     {
       "source": "as9100d-npi-clauses",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "as9100d-npi-clauses",
       "target": "configuration-management-basics"
+    },
+    {
+      "source": "as9100d-npi-clauses",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "as9100d-npi-clauses",
@@ -709,16 +681,36 @@ const graphData = {
       "target": "pfmea-and-dfmea"
     },
     {
-      "source": "configuration-management-basics",
+      "source": "aerospace-npi-process-overview",
+      "target": "as9100d-npi-clauses"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "moc--npi-process"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
       "target": "design-reviews--pdr-cdr-trr"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "ppap-in-aerospace--as9145"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "configuration-management-basics"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "moc--digital-systems"
     },
     {
       "source": "configuration-management-basics",
       "target": "as9100d-npi-clauses"
-    },
-    {
-      "source": "configuration-management-basics",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "configuration-management-basics",
@@ -726,15 +718,27 @@ const graphData = {
     },
     {
       "source": "configuration-management-basics",
-      "target": "moc--digital-systems"
+      "target": "design-reviews--pdr-cdr-trr"
+    },
+    {
+      "source": "configuration-management-basics",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "configuration-management-basics",
       "target": "aerospace-npi-process-overview"
     },
     {
+      "source": "configuration-management-basics",
+      "target": "moc--digital-systems"
+    },
+    {
       "source": "design-reviews--pdr-cdr-trr",
       "target": "as9100d-npi-clauses"
+    },
+    {
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "moc--npi-process"
     },
     {
       "source": "design-reviews--pdr-cdr-trr",
@@ -742,15 +746,11 @@ const graphData = {
     },
     {
       "source": "design-reviews--pdr-cdr-trr",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
       "target": "configuration-management-basics"
+    },
+    {
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "design-reviews--pdr-cdr-trr",
@@ -766,11 +766,11 @@ const graphData = {
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "ppap-in-aerospace--as9145"
+      "target": "moc--npi-process"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "moc--npi-process"
+      "target": "ppap-in-aerospace--as9145"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
@@ -798,19 +798,7 @@ const graphData = {
     },
     {
       "source": "moc--npi-process",
-      "target": "design-reviews--pdr-cdr-trr"
-    },
-    {
-      "source": "moc--npi-process",
       "target": "as9100d-npi-clauses"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "ppap-in-aerospace--as9145"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "moc--npi-process",
@@ -818,7 +806,19 @@ const graphData = {
     },
     {
       "source": "moc--npi-process",
+      "target": "design-reviews--pdr-cdr-trr"
+    },
+    {
+      "source": "moc--npi-process",
+      "target": "ppap-in-aerospace--as9145"
+    },
+    {
+      "source": "moc--npi-process",
       "target": "configuration-management-basics"
+    },
+    {
+      "source": "moc--npi-process",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "moc--npi-process",
@@ -830,19 +830,19 @@ const graphData = {
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "design-reviews--pdr-cdr-trr"
-    },
-    {
-      "source": "pfmea-and-dfmea",
       "target": "as9100d-npi-clauses"
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "ppap-in-aerospace--as9145"
+      "target": "moc--npi-process"
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "moc--npi-process"
+      "target": "design-reviews--pdr-cdr-trr"
+    },
+    {
+      "source": "pfmea-and-dfmea",
+      "target": "ppap-in-aerospace--as9145"
     },
     {
       "source": "pfmea-and-dfmea",
@@ -858,15 +858,15 @@ const graphData = {
     },
     {
       "source": "ppap-in-aerospace--as9145",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
-    },
-    {
-      "source": "ppap-in-aerospace--as9145",
       "target": "moc--npi-process"
     },
     {
       "source": "ppap-in-aerospace--as9145",
       "target": "configuration-management-basics"
+    },
+    {
+      "source": "ppap-in-aerospace--as9145",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "ppap-in-aerospace--as9145",
