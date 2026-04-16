@@ -11,7 +11,7 @@ from typing import Dict, List, Any, Set
 
 
 def extract_frontmatter(content: str) -> Dict[str, Any]:
-    """Parse YAML frontmatter from markdown."""
+    """Parse YAML frontmatter from markdown, including multi-line list fields."""
     if not content.startswith('---'):
         return {}
 
@@ -27,14 +27,24 @@ def extract_frontmatter(content: str) -> Dict[str, Any]:
 
     fm_lines = lines[1:end_idx]
     fm = {}
+    current_key = None
+    current_list = None
 
     for line in fm_lines:
-        if ':' in line:
-            key, val = line.split(':', 1)
+        stripped = line.strip()
+        if stripped.startswith('- ') and current_list is not None:
+            fm[current_key].append(stripped[2:].strip().strip('"\''))
+        elif ':' in stripped and not stripped.startswith('-'):
+            current_key = None
+            current_list = None
+            key, val = stripped.split(':', 1)
             key = key.strip()
             val = val.strip().strip('"\'')
-
-            if key == 'tags' and val.startswith('['):
+            if val == '':
+                current_key = key
+                current_list = []
+                fm[key] = current_list
+            elif val.startswith('['):
                 try:
                     fm[key] = json.loads(val)
                 except:
@@ -209,9 +219,14 @@ def build_graph():
                 'supportingArticles': [],
             }
 
-            # Find references
+            # Edges from wikilinks in body
             for target_id in wikilinks:
                 all_links.append({'source': page_id, 'target': target_id})
+
+            # Edges from sources: frontmatter field (concept → supporting source)
+            for raw_source in fm.get('sources', []):
+                src_clean = re.sub(r'^\[\[|\]\]$', '', raw_source.strip())
+                all_links.append({'source': page_id, 'target': slugify(src_clean)})
 
     # Process sources (articles)
     sources_dir = docs_path / 'sources'

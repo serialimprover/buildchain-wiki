@@ -1,4 +1,28 @@
 {
+  "aerospace-npi-process-overview": {
+    "id": "aerospace-npi-process-overview",
+    "title": "Aerospace NPI Process Overview",
+    "type": "concept",
+    "description": "New Product Introduction (NPI) in aerospace and defense is a highly structured, gate-driven process that takes a concept from design through production release. Unlike commercial consumer electronics",
+    "tags": [
+      "phase/NPI",
+      "domain/aerospace-defense",
+      "standard/AS9100D"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/aerospace-npi-process-overview",
+    "relatedConcepts": [
+      "as9100d-npi-clauses",
+      "first-article-inspection--fai-and-fair-as9102b",
+      "moc--digital-systems",
+      "moc--npi-process",
+      "configuration-management-basics",
+      "ppap-in-aerospace--as9145",
+      "design-reviews--pdr-cdr-trr",
+      "aerospace-npi-process-overview"
+    ],
+    "supportingArticles": []
+  },
   "as9100d-npi-clauses": {
     "id": "as9100d-npi-clauses",
     "title": "AS9100D NPI Clauses",
@@ -6,40 +30,21 @@
     "description": "**AS9100D** (Revision D, current) is the aerospace and defense quality management standard. It combines ISO 9001:2015 base requirements with additional aerospace-specific controls for configuration ma",
     "tags": [
       "phase/NPI",
-      "standard/AS9100D"
+      "domain/aerospace-defense",
+      "standard/AS9100D",
+      "system/QMS"
     ],
     "status": "synthesized",
     "url": "/concepts/as9100d-npi-clauses",
     "relatedConcepts": [
-      "moc--npi-process",
-      "design-reviews--pdr-cdr-trr",
-      "ppap-in-aerospace--as9145",
-      "configuration-management-basics",
       "first-article-inspection--fai-and-fair-as9102b",
       "aerospace-npi-process-overview",
-      "pfmea-and-dfmea"
-    ],
-    "supportingArticles": []
-  },
-  "aerospace-npi-process-overview": {
-    "id": "aerospace-npi-process-overview",
-    "title": "Aerospace NPI Process Overview",
-    "type": "concept",
-    "description": "New Product Introduction (NPI) in aerospace and defense is a highly structured, gate-driven process that takes a concept from design through production release. Unlike commercial consumer electronics",
-    "tags": [
-      "domain/aerospace",
-      "phase/NPI"
-    ],
-    "status": "synthesized",
-    "url": "/concepts/aerospace-npi-process-overview",
-    "relatedConcepts": [
-      "as9100d-npi-clauses",
       "moc--npi-process",
-      "design-reviews--pdr-cdr-trr",
-      "ppap-in-aerospace--as9145",
       "configuration-management-basics",
-      "first-article-inspection--fai-and-fair-as9102b",
-      "moc--digital-systems"
+      "ppap-in-aerospace--as9145",
+      "pfmea-and-dfmea",
+      "design-reviews--pdr-cdr-trr",
+      "as9100d-npi-clauses"
     ],
     "supportingArticles": []
   },
@@ -49,17 +54,21 @@
     "type": "concept",
     "description": "**Configuration Management** is the discipline of identifying, controlling, and tracking all versions of a product's design, components, materials, and processes throughout its lifecycle. It ensures t",
     "tags": [
-      "domain/quality"
+      "phase/NPI",
+      "phase/sustaining",
+      "system/PLM",
+      "domain/aerospace-defense"
     ],
     "status": "synthesized",
     "url": "/concepts/configuration-management-basics",
     "relatedConcepts": [
       "as9100d-npi-clauses",
-      "moc--npi-process",
-      "design-reviews--pdr-cdr-trr",
       "first-article-inspection--fai-and-fair-as9102b",
       "aerospace-npi-process-overview",
-      "moc--digital-systems"
+      "moc--digital-systems",
+      "moc--npi-process",
+      "design-reviews--pdr-cdr-trr",
+      "configuration-management-basics"
     ],
     "supportingArticles": []
   },
@@ -69,18 +78,88 @@
     "type": "concept",
     "description": "Design Reviews are formal, gated assessments that occur at critical milestones in the aerospace NPI lifecycle. They are governed by **MIL-STD-1521B** (or customer-specific variants) and serve as **go/",
     "tags": [
-      "phase/Design"
+      "phase/NPI",
+      "phase/design",
+      "domain/aerospace-defense"
     ],
     "status": "synthesized",
     "url": "/concepts/design-reviews--pdr-cdr-trr",
     "relatedConcepts": [
       "as9100d-npi-clauses",
-      "moc--npi-process",
-      "ppap-in-aerospace--as9145",
-      "configuration-management-basics",
       "first-article-inspection--fai-and-fair-as9102b",
       "aerospace-npi-process-overview",
-      "pfmea-and-dfmea"
+      "moc--npi-process",
+      "configuration-management-basics",
+      "ppap-in-aerospace--as9145",
+      "pfmea-and-dfmea",
+      "design-reviews--pdr-cdr-trr"
+    ],
+    "supportingArticles": []
+  },
+  "digital-thread-in-manufacturing": {
+    "id": "digital-thread-in-manufacturing",
+    "title": "Digital Thread in Manufacturing",
+    "type": "concept",
+    "description": "The digital thread is the **continuous, connected flow of product data** across all systems involved in a product's lifecycle \u2014 from initial design through manufacturing, delivery, and service. It eli",
+    "tags": [
+      "system/PLM",
+      "system/ERP",
+      "system/MES",
+      "system/CAD",
+      "domain/manufacturing",
+      "phase/manufacturing"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/digital-thread-in-manufacturing",
+    "relatedConcepts": [
+      "plm-erp-mes-integration",
+      "first-article-inspection--fai-and-fair-as9102b",
+      "aerospace-npi-process-overview",
+      "isa-95",
+      "engineering-change-management",
+      "unified-namespace-uns",
+      "it-ot-convergence",
+      "digital-twins-in-manufacturing"
+    ],
+    "supportingArticles": []
+  },
+  "digital-twins-in-manufacturing": {
+    "id": "digital-twins-in-manufacturing",
+    "title": "Digital Twins in Manufacturing",
+    "type": "concept",
+    "description": "A digital twin is a **dynamic virtual replica** of a physical asset, process, or system that is continuously synchronized with its real-world counterpart through live data. Unlike a static CAD model o",
+    "tags": [
+      "system/digital-twin",
+      "domain/manufacturing",
+      "phase/manufacturing"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/digital-twins-in-manufacturing",
+    "relatedConcepts": [
+      "plm-erp-mes-integration",
+      "unified-namespace-uns",
+      "digital-thread-in-manufacturing",
+      "it-ot-convergence"
+    ],
+    "supportingArticles": []
+  },
+  "engineering-change-management": {
+    "id": "engineering-change-management",
+    "title": "Engineering Change Management",
+    "type": "concept",
+    "description": "Engineering Change Management (ECM) is the structured, end-to-end process for identifying, evaluating, approving, implementing, and tracking modifications to product designs, requirements, specificati",
+    "tags": [
+      "system/PLM",
+      "phase/sustaining",
+      "domain/manufacturing",
+      "domain/quality"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/engineering-change-management",
+    "relatedConcepts": [
+      "plm-erp-mes-integration",
+      "isa-95",
+      "digital-thread-in-manufacturing"
     ],
     "supportingArticles": []
   },
@@ -90,17 +169,99 @@
     "type": "concept",
     "description": "**First Article Inspection (FAI)** is a comprehensive, one-time inspection and testing of the first production (or pilot) article of a new part or component to verify that:",
     "tags": [
-      "process/FAI"
+      "phase/NPI",
+      "domain/aerospace-defense",
+      "process/FAI",
+      "standard/AS9102B"
     ],
     "status": "synthesized",
     "url": "/concepts/first-article-inspection--fai-and-fair-as9102b",
     "relatedConcepts": [
       "as9100d-npi-clauses",
-      "moc--npi-process",
-      "ppap-in-aerospace--as9145",
-      "configuration-management-basics",
       "aerospace-npi-process-overview",
-      "pfmea-and-dfmea"
+      "moc--npi-process",
+      "configuration-management-basics",
+      "ppap-in-aerospace--as9145",
+      "pfmea-and-dfmea",
+      "first-article-inspection--fai-and-fair-as9102b"
+    ],
+    "supportingArticles": []
+  },
+  "hardware-in-the-loop-hil-testing": {
+    "id": "hardware-in-the-loop-hil-testing",
+    "title": "Hardware-in-the-Loop (HIL) Testing",
+    "type": "concept",
+    "description": "Hardware-in-the-loop (HIL) testing is a validation technique where a **real embedded control unit** (ECU) runs its actual production software, but instead of being connected to a real physical plant (",
+    "tags": [
+      "phase/NPI",
+      "domain/aerospace-defense",
+      "domain/manufacturing"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/hardware-in-the-loop-hil-testing",
+    "relatedConcepts": [
+      "aerospace-npi-process-overview",
+      "digital-twins-in-manufacturing"
+    ],
+    "supportingArticles": []
+  },
+  "inventory-management-and-obsolescence": {
+    "id": "inventory-management-and-obsolescence",
+    "title": "Inventory Management and Obsolescence",
+    "type": "concept",
+    "description": "Obsolete inventory is any inventory a company can no longer sell or use due to lack of demand. In manufacturing specifically: - **Finished goods** \u2014 products that have reached end-of-life or been supe",
+    "tags": [
+      "system/ERP",
+      "phase/sustaining",
+      "domain/manufacturing"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/inventory-management-and-obsolescence",
+    "relatedConcepts": [
+      "plm-erp-mes-integration",
+      "engineering-change-management"
+    ],
+    "supportingArticles": []
+  },
+  "isa-95": {
+    "id": "isa-95",
+    "title": "ISA-95",
+    "type": "concept",
+    "description": "ISA-95 (also published as IEC 62264) is the international standard developed by the **International Society of Automation (ISA)** that defines: - The functional architecture of manufacturing operation",
+    "tags": [
+      "system/MES",
+      "system/ERP",
+      "domain/manufacturing",
+      "domain/industrial"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/isa-95",
+    "relatedConcepts": [
+      "plm-erp-mes-integration",
+      "unified-namespace-uns",
+      "digital-thread-in-manufacturing",
+      "it-ot-convergence"
+    ],
+    "supportingArticles": []
+  },
+  "it-ot-convergence": {
+    "id": "it-ot-convergence",
+    "title": "IT-OT Convergence",
+    "type": "concept",
+    "description": "**Operational Technology (OT)** \u2014 hardware and software that monitors and controls physical processes. Deals with the tangible, real-time world of manufacturing:",
+    "tags": [
+      "system/MES",
+      "domain/industrial",
+      "domain/manufacturing",
+      "phase/manufacturing"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/it-ot-convergence",
+    "relatedConcepts": [
+      "plm-erp-mes-integration",
+      "isa-95",
+      "unified-namespace-uns",
+      "digital-twins-in-manufacturing"
     ],
     "supportingArticles": []
   },
@@ -110,7 +271,10 @@
     "type": "concept",
     "description": "Central hub for Product Lifecycle Management (PLM), Enterprise Resource Planning (ERP), and Manufacturing Execution Systems (MES) concepts and their integration in hardware development and production.",
     "tags": [
-      "system/MOC"
+      "system/PLM",
+      "system/ERP",
+      "system/MES",
+      "domain/industrial"
     ],
     "status": "synthesized",
     "url": "/concepts/moc--digital-systems",
@@ -128,19 +292,19 @@
     "description": "Central hub for New Product Introduction concepts in aerospace and defense. Navigate by role, process, or standard.",
     "tags": [
       "phase/NPI",
-      "system/MOC"
+      "domain/aerospace-defense"
     ],
     "status": "synthesized",
     "url": "/concepts/moc--npi-process",
     "relatedConcepts": [
       "as9100d-npi-clauses",
-      "moc--digital-systems",
-      "design-reviews--pdr-cdr-trr",
-      "ppap-in-aerospace--as9145",
-      "configuration-management-basics",
       "first-article-inspection--fai-and-fair-as9102b",
       "aerospace-npi-process-overview",
-      "pfmea-and-dfmea"
+      "moc--digital-systems",
+      "configuration-management-basics",
+      "ppap-in-aerospace--as9145",
+      "pfmea-and-dfmea",
+      "design-reviews--pdr-cdr-trr"
     ],
     "supportingArticles": []
   },
@@ -150,17 +314,63 @@
     "type": "concept",
     "description": "**FMEA (Failure Mode & Effects Analysis)** is a systematic technique for identifying and analyzing potential failures in a product or process, assessing their severity and occurrence probability, and",
     "tags": [
-      "process/FMEA"
+      "phase/NPI",
+      "phase/design",
+      "phase/manufacturing",
+      "process/PFMEA",
+      "process/DFMEA"
     ],
     "status": "synthesized",
     "url": "/concepts/pfmea-and-dfmea",
     "relatedConcepts": [
       "as9100d-npi-clauses",
+      "aerospace-npi-process-overview",
       "moc--npi-process",
-      "design-reviews--pdr-cdr-trr",
-      "ppap-in-aerospace--as9145",
       "configuration-management-basics",
-      "aerospace-npi-process-overview"
+      "ppap-in-aerospace--as9145",
+      "design-reviews--pdr-cdr-trr",
+      "pfmea-and-dfmea"
+    ],
+    "supportingArticles": []
+  },
+  "plc-hmi-and-scada": {
+    "id": "plc-hmi-and-scada",
+    "title": "PLC, HMI, and SCADA",
+    "type": "concept",
+    "description": "These three technologies form the foundational control stack of industrial automation. They are distinct but designed to work together in a layered hierarchy.",
+    "tags": [
+      "domain/industrial",
+      "domain/manufacturing",
+      "phase/manufacturing"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/plc-hmi-and-scada",
+    "relatedConcepts": [
+      "isa-95",
+      "unified-namespace-uns",
+      "it-ot-convergence"
+    ],
+    "supportingArticles": []
+  },
+  "plm-erp-mes-integration": {
+    "id": "plm-erp-mes-integration",
+    "title": "PLM-ERP-MES Integration",
+    "type": "concept",
+    "description": "Manufacturing operations run on three distinct but interconnected systems, each owning a different slice of the product lifecycle:",
+    "tags": [
+      "system/PLM",
+      "system/ERP",
+      "system/MES",
+      "domain/manufacturing",
+      "phase/manufacturing"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/plm-erp-mes-integration",
+    "relatedConcepts": [
+      "isa-95",
+      "engineering-change-management",
+      "digital-thread-in-manufacturing",
+      "it-ot-convergence"
     ],
     "supportingArticles": []
   },
@@ -170,18 +380,43 @@
     "type": "concept",
     "description": "**Production Part Approval Process (PPAP)** is a supplier quality process that demonstrates that a new part, component, or assembly meets design specifications and is ready for production. It originat",
     "tags": [
-      "domain/aerospace",
-      "process/PPAP"
+      "phase/NPI",
+      "domain/aerospace-defense",
+      "process/PPAP",
+      "standard/AS9145",
+      "system/PLM"
     ],
     "status": "synthesized",
     "url": "/concepts/ppap-in-aerospace--as9145",
     "relatedConcepts": [
       "as9100d-npi-clauses",
-      "moc--npi-process",
-      "configuration-management-basics",
       "first-article-inspection--fai-and-fair-as9102b",
       "aerospace-npi-process-overview",
-      "pfmea-and-dfmea"
+      "moc--npi-process",
+      "configuration-management-basics",
+      "pfmea-and-dfmea",
+      "ppap-in-aerospace--as9145"
+    ],
+    "supportingArticles": []
+  },
+  "unified-namespace-uns": {
+    "id": "unified-namespace-uns",
+    "title": "Unified Namespace (UNS)",
+    "type": "concept",
+    "description": "A Unified Namespace is a **semantic, event-driven architecture** that acts as a centralized hub for real-time operational data. Instead of point-to-point connections between systems (PLC \u2192 SCADA \u2192 MES",
+    "tags": [
+      "system/MES",
+      "domain/industrial",
+      "domain/manufacturing",
+      "phase/manufacturing"
+    ],
+    "status": "synthesized",
+    "url": "/concepts/unified-namespace-uns",
+    "relatedConcepts": [
+      "plm-erp-mes-integration",
+      "isa-95",
+      "digital-twins-in-manufacturing",
+      "it-ot-convergence"
     ],
     "supportingArticles": []
   },
@@ -197,18 +432,6 @@
     "relatedConcepts": [],
     "supportingArticles": []
   },
-  "as9100-clause-guide-for-aerospace-organizations": {
-    "id": "as9100-clause-guide-for-aerospace-organizations",
-    "title": "Request a Quote",
-    "type": "source",
-    "description": "- Accredited certifications - Helpful resources - No hidden fees - Trusted certification experts [Request a Quote](https://amtivo.com/us/certification-quote/ \"",
-    "tags": [],
-    "status": "raw",
-    "url": "/sources/as9100-clause-guide-for-aerospace-organizations",
-    "source": "https://amtivo.com/us/resources/guides-downloads/key-aerospace-9100-clause-guide/",
-    "relatedConcepts": [],
-    "supportingArticles": []
-  },
   "applications-of-digital-twins-in-manufacturing": {
     "id": "applications-of-digital-twins-in-manufacturing",
     "title": "What is Digital Twin Technology?",
@@ -218,6 +441,18 @@
     "status": "raw",
     "url": "/sources/applications-of-digital-twins-in-manufacturing",
     "source": "https://www.cyngn.com/blog/applications-of-digital-twins-in-manufacturing",
+    "relatedConcepts": [],
+    "supportingArticles": []
+  },
+  "as9100-clause-guide-for-aerospace-organizations": {
+    "id": "as9100-clause-guide-for-aerospace-organizations",
+    "title": "Request a Quote",
+    "type": "source",
+    "description": "- Accredited certifications - Helpful resources - No hidden fees - Trusted certification experts [Request a Quote](https://amtivo.com/us/certification-quote/ \"",
+    "tags": [],
+    "status": "raw",
+    "url": "/sources/as9100-clause-guide-for-aerospace-organizations",
+    "source": "https://amtivo.com/us/resources/guides-downloads/key-aerospace-9100-clause-guide/",
     "relatedConcepts": [],
     "supportingArticles": []
   },
@@ -301,18 +536,6 @@
     "relatedConcepts": [],
     "supportingArticles": []
   },
-  "engineering-change-order-eco-definition-types-process-and-example": {
-    "id": "engineering-change-order-eco-definition-types-process-and-example",
-    "title": "What Is an Engineering Change Order (ECO)?",
-    "type": "source",
-    "description": "An Engineering Change Order (ECO) is a formal document in engineering and manufacturing that authorizes and governs the implementation of modifications to a product design, component, or process.",
-    "tags": [],
-    "status": "raw",
-    "url": "/sources/engineering-change-order-eco-definition-types-process-and-example",
-    "source": "https://simplerqms.com/engineering-change-order/",
-    "relatedConcepts": [],
-    "supportingArticles": []
-  },
   "engineering-change-management-definition-process-and-best-practices": {
     "id": "engineering-change-management-definition-process-and-best-practices",
     "title": "See the solution in action",
@@ -322,6 +545,18 @@
     "status": "raw",
     "url": "/sources/engineering-change-management-definition-process-and-best-practices",
     "source": "https://www.aletiq.com/en/post/engineering-change-management",
+    "relatedConcepts": [],
+    "supportingArticles": []
+  },
+  "engineering-change-order-eco-definition-types-process-and-example": {
+    "id": "engineering-change-order-eco-definition-types-process-and-example",
+    "title": "What Is an Engineering Change Order (ECO)?",
+    "type": "source",
+    "description": "An Engineering Change Order (ECO) is a formal document in engineering and manufacturing that authorizes and governs the implementation of modifications to a product design, component, or process.",
+    "tags": [],
+    "status": "raw",
+    "url": "/sources/engineering-change-order-eco-definition-types-process-and-example",
+    "source": "https://simplerqms.com/engineering-change-order/",
     "relatedConcepts": [],
     "supportingArticles": []
   },
@@ -411,18 +646,6 @@
     "relatedConcepts": [],
     "supportingArticles": []
   },
-  "itot-convergence-a-complete-guide": {
-    "id": "itot-convergence-a-complete-guide",
-    "title": "Bridging the Gap Between IT & OT on the Factory Floor",
-    "type": "source",
-    "description": "In the production plant, it can often feel like a tug of war between two sides of the process: the machines and equipment performing the physical labor, and the data, servers, and digital devices that",
-    "tags": [],
-    "status": "raw",
-    "url": "/sources/itot-convergence-a-complete-guide",
-    "source": "https://orise.com/it-ot-convergence-explained/",
-    "relatedConcepts": [],
-    "supportingArticles": []
-  },
   "implementing-unified-namespace-uns-with-mqtt-sparkplug": {
     "id": "implementing-unified-namespace-uns-with-mqtt-sparkplug",
     "title": "Implementing Unified Namespace (UNS) With MQTT Sparkplug",
@@ -447,15 +670,15 @@
     "relatedConcepts": [],
     "supportingArticles": []
   },
-  "otit-convergence-and-physical-ai-innovation": {
-    "id": "otit-convergence-and-physical-ai-innovation",
-    "title": "OTIT Convergence and Physical AI Innovation",
+  "itot-convergence-a-complete-guide": {
+    "id": "itot-convergence-a-complete-guide",
+    "title": "Bridging the Gap Between IT & OT on the Factory Floor",
     "type": "source",
-    "description": "",
+    "description": "In the production plant, it can often feel like a tug of war between two sides of the process: the machines and equipment performing the physical labor, and the data, servers, and digital devices that",
     "tags": [],
     "status": "raw",
-    "url": "/sources/otit-convergence-and-physical-ai-innovation",
-    "source": "https://www.hcltech.com/trends-and-insights/otit-convergence-enabling-next-wave-innovation-physical-ai",
+    "url": "/sources/itot-convergence-a-complete-guide",
+    "source": "https://orise.com/it-ot-convergence-explained/",
     "relatedConcepts": [],
     "supportingArticles": []
   },
@@ -468,6 +691,18 @@
     "status": "raw",
     "url": "/sources/optimize-your-parts-inventory-to-reduce-obsolescence-risk",
     "source": "https://ats-service.com/blog/reduce-parts-obsolescence-risk",
+    "relatedConcepts": [],
+    "supportingArticles": []
+  },
+  "otit-convergence-and-physical-ai-innovation": {
+    "id": "otit-convergence-and-physical-ai-innovation",
+    "title": "OTIT Convergence and Physical AI Innovation",
+    "type": "source",
+    "description": "",
+    "tags": [],
+    "status": "raw",
+    "url": "/sources/otit-convergence-and-physical-ai-innovation",
+    "source": "https://www.hcltech.com/trends-and-insights/otit-convergence-enabling-next-wave-innovation-physical-ai",
     "relatedConcepts": [],
     "supportingArticles": []
   },
@@ -522,6 +757,18 @@
     "relatedConcepts": [],
     "supportingArticles": []
   },
+  "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40": {
+    "id": "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
+    "title": "Abstract",
+    "type": "source",
+    "description": "As the adoption of Industry 4.0 advances and the manufacturing process becomes increasingly digital, the Digital Twin (DT) will prove invaluable for testing and simulating new parameters and design va",
+    "tags": [],
+    "status": "raw",
+    "url": "/sources/the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10246533/",
+    "relatedConcepts": [],
+    "supportingArticles": []
+  },
   "the-roles-of-erp-and-plm-in-manufacturing---now-with-mes": {
     "id": "the-roles-of-erp-and-plm-in-manufacturing---now-with-mes",
     "title": "The Roles of ERP and PLM in Manufacturing - now with MES!",
@@ -534,18 +781,6 @@
     "status": "raw",
     "url": "/sources/the-roles-of-erp-and-plm-in-manufacturing---now-with-mes",
     "source": "https://tech-clarity.com/erp-plm-mes/1095",
-    "relatedConcepts": [],
-    "supportingArticles": []
-  },
-  "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40": {
-    "id": "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
-    "title": "Abstract",
-    "type": "source",
-    "description": "As the adoption of Industry 4.0 advances and the manufacturing process becomes increasingly digital, the Digital Twin (DT) will prove invaluable for testing and simulating new parameters and design va",
-    "tags": [],
-    "status": "raw",
-    "url": "/sources/the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
-    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10246533/",
     "relatedConcepts": [],
     "supportingArticles": []
   },
@@ -611,18 +846,6 @@
     "relatedConcepts": [],
     "supportingArticles": []
   },
-  "what-is-obsolete-inventory-and-how-to-prevent-it": {
-    "id": "what-is-obsolete-inventory-and-how-to-prevent-it",
-    "title": "What is obsolete inventory?",
-    "type": "source",
-    "description": "Obsolete inventory is any inventory that a company can no longer sell or use due to lack of demand. This mostly occurs when goods reach the end of their product life cycle or in cases of sudden sales",
-    "tags": [],
-    "status": "raw",
-    "url": "/sources/what-is-obsolete-inventory-and-how-to-prevent-it",
-    "source": "https://www.mrpeasy.com/blog/obsolete-inventory/",
-    "relatedConcepts": [],
-    "supportingArticles": []
-  },
   "what-is-engineering-change-management": {
     "id": "what-is-engineering-change-management",
     "title": "Introduction",
@@ -646,6 +869,18 @@
     "status": "raw",
     "url": "/sources/what-is-hardware-in-the-loop-testing",
     "source": "https://www.ansys.com/simulation-topics/what-is-hardware-in-the-loop-testing",
+    "relatedConcepts": [],
+    "supportingArticles": []
+  },
+  "what-is-obsolete-inventory-and-how-to-prevent-it": {
+    "id": "what-is-obsolete-inventory-and-how-to-prevent-it",
+    "title": "What is obsolete inventory?",
+    "type": "source",
+    "description": "Obsolete inventory is any inventory that a company can no longer sell or use due to lack of demand. This mostly occurs when goods reach the end of their product life cycle or in cases of sudden sales",
+    "tags": [],
+    "status": "raw",
+    "url": "/sources/what-is-obsolete-inventory-and-how-to-prevent-it",
+    "source": "https://www.mrpeasy.com/blog/obsolete-inventory/",
     "relatedConcepts": [],
     "supportingArticles": []
   }
