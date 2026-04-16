@@ -274,12 +274,12 @@ def build_graph():
             for target_id in wikilinks:
                 all_links.append({'source': page_id, 'target': target_id})
 
-    # Deduplicate and filter links (only include links where source exists)
+    # Deduplicate and filter links (both endpoints must exist as nodes)
     links = []
     seen = set()
     for link in all_links:
         key = (link['source'], link['target'])
-        if key not in seen and link['source'] in nodes:
+        if key not in seen and link['source'] in nodes and link['target'] in nodes:
             links.append(link)
             seen.add(key)
 
