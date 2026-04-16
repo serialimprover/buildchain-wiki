@@ -734,17 +734,6 @@
       </div>
     </div>
 
-    <div class="legend">
-      <div class="legend-title">Node Types</div>
-      <div class="legend-item">
-        <div class="legend-circle" style="background: #8b6f47; border: 2px solid #ffa500;"></div>
-        <span>MOC</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-circle" style="background: #3d5a80; border: 2px solid #6da8d6;"></div>
-        <span>Concept</span>
-      </div>
-    </div>
   </div>
 
   <script src="graph-data.js"></script>
@@ -1271,7 +1260,10 @@
       const tagBadges = d.tags && d.tags.length > 0
         ? d.tags.map(tag => `<span class="badge">${tag}</span>`).join('')
         : '';
-      document.getElementById('drawerMeta').innerHTML = `<span class="badge">${d.type.toUpperCase()}</span>${tagBadges}`;
+      const sourceButton = d.type === 'source' && d.source
+        ? `<button class="badge" style="cursor: pointer; background: #e97316; border: none; padding: 0.25rem 0.75rem;" onclick="window.open('${d.source}', '_blank')">SOURCE</button>`
+        : '';
+      document.getElementById('drawerMeta').innerHTML = `<span class="badge">${d.type.toUpperCase()}</span>${sourceButton}${tagBadges}`;
 
       // Render breadcrumbs
       if (relationshipExplorer) {
