@@ -1260,10 +1260,15 @@
       const tagBadges = d.tags && d.tags.length > 0
         ? d.tags.map(tag => `<span class="badge">${tag}</span>`).join('')
         : '';
-      const sourceButton = d.type === 'source' && d.source
-        ? `<button class="badge" style="cursor: pointer; background: #e97316; border: none; padding: 0.25rem 0.75rem;" onclick="window.open('${d.source}', '_blank')">SOURCE</button>`
-        : '';
-      document.getElementById('drawerMeta').innerHTML = `<span class="badge">${d.type.toUpperCase()}</span>${sourceButton}${tagBadges}`;
+
+      let headerHtml = '';
+      if (d.type === 'source' && d.source) {
+        headerHtml = `<button class="badge" style="cursor: pointer; background: #e97316; border: none; padding: 0.25rem 0.75rem;" onclick="window.open('${d.source}', '_blank')">SOURCE</button>`;
+      } else {
+        headerHtml = `<span class="badge">${d.type.toUpperCase()}</span>`;
+      }
+      headerHtml += tagBadges;
+      document.getElementById('drawerMeta').innerHTML = headerHtml;
 
       // Render breadcrumbs
       if (relationshipExplorer) {
