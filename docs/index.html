@@ -1288,8 +1288,8 @@
       }
 
       // Clear and render content
-      if (d.content) {
-        const html = simpleMarkdown(d.content);
+      if (d.description) {
+        const html = simpleMarkdown(d.description);
         contentDiv.innerHTML = html;
       } else {
         contentDiv.innerHTML = '<p>No content available for this node.</p>';
