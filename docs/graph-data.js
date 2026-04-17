@@ -1,31 +1,6 @@
 const graphData = {
   "nodes": [
     {
-      "id": "aerospace-npi-process-overview",
-      "title": "Aerospace NPI Process Overview",
-      "type": "concept",
-      "description": "New Product Introduction (NPI) in aerospace and defense is a highly structured, gate-driven process that takes a concept from design through production release. Unlike commercial consumer electronics",
-      "content": "# Aerospace NPI Process Overview\n\n## What is Aerospace NPI?\n\nNew Product Introduction (NPI) in aerospace and defense is a highly structured, gate-driven process that takes a concept from design through production release. Unlike commercial consumer electronics (which use EVT/DVT/PVT), aerospace follows a more rigorous framework with mandatory design reviews, First Article Inspection (FAI), and Production Part Approval Process (PPAP) under standards like AS9100D and AS9145.\n\n## Key Phases\n\n### 1. Concept & Requirements (Pre-Design)\n- Define program objectives, requirements, and constraints\n- Establish initial design teams and supplier strategy\n- Compliance mapping (AS9100D clauses applicable to the product)\n\n### 2. Preliminary Design (Design Phase)\n- Complete system and subsystem-level design\n- Conduct **Preliminary Design Review (PDR)**; verify requirements are met\n- Identify critical design parameters, materials, and manufacturing risks\n- Initial DFMEA (Design FMEA)\n\n### 3. Critical Design & Detailed Engineering\n- Finalize all design details, drawings, specifications\n- Conduct **Critical Design Review (CDR)**; confirm design is robust and manufacturable\n- Complete DFMEA; allocate requirements to suppliers\n- Generate Bill of Materials (BOM)\n- Plan test and validation strategy\n\n### 4. Production Design & Prototype Build (Engineering Phase)\n- Build and test prototype/breadboard units (equivalent to EVT in consumer electronics)\n- Refine design based on test results\n- Supplier design qualification begins\n- Prepare manufacturing processes and tooling\n\n### 5. Pilot/Pre-Production (NPI Phase)\n- Build low-rate initial production (LRIP) or pilot units\n- Complete all qualification testing\n- Execute **First Article Inspection (FAI)** \u2014 per AS9102B\n- Supplier process validation and PPAP submission \u2014 per AS9145\n- Conduct **Test Readiness Review (TRR)**; confirm readiness for full production\n\n### 6. Production Release\n- Approve design, suppliers, and manufacturing processes\n- Release design to production\n- Establish configuration baseline\n- Begin production runs\n\n### 7. Sustaining\n- Manage engineering changes (ECNs) via Configuration Management\n- Monitor reliability, obsolescence, supplier performance\n- Sustain production support\n\n## Timeline\n\nA typical aerospace NPI for a moderate-complexity product spans **18\u201336 months** from concept to production, depending on:\n- Product complexity\n- Supplier maturity\n- Regulatory requirements (DO-254 for avionics, AS9100D for manufacturing, etc.)\n- Test and validation scope\n\nCommercial electronics compress this to 6\u201312 months; aerospace trades speed for reliability and traceability.\n\n## Mandatory Deliverables at Each Gate\n\n| Phase | Design Reviews | Key Documents | Supplier Readiness |\n|-------|---|---|---|\n| Pre-Design | Program Review | System Spec, Risk Register | Supplier RFQ |\n| Preliminary Design | **PDR** | Requirements, DFMEA V1, BOM (preliminary) | Supplier Design Bid |\n| Critical Design | **CDR** | Design Drawings, Specifications, DFMEA Final, Test Plan | Supplier Design Contract |\n| Prototype | (Internal reviews) | Prototype test reports, design changes log | Supplier Samples |\n| Pilot/LRIP | **TRR** | Process specs, **FAIR** (FAI Report), PPAP Level docs | **PPAP Submission** |\n| Production | Configuration Baseline | Design Release, Supplier Approval Status | Full Production Readiness |\n\n## Key Standards & Frameworks\n\n- **AS9100D** \u2014 Quality Management System requirements; clause 8.3 (design & development), 8.5.1 (production controls)\n- **AS9102B** \u2014 First Article Inspection; defines FAIR (First Article Inspection Report) contents\n- **AS9145** \u2014 Qualification and Approval of Aerospace Suppliers; includes PPAP tailored for aerospace\n- **MIL-STD-1521** \u2014 Technical Reviews; governs PDR, CDR, TRR format and entry/exit criteria (referenced in aerospace contracts)\n\n## Differences from Commercial Electronics (EVT/DVT/PVT)\n\n| Aspect | Commercial (EVT/DVT/PVT) | Aerospace (PDR/CDR/LRIP) |\n|--------|---|---|\n| Design Reviews | Often informal, 1\u20132 internal reviews | Formal gates: PDR, CDR, TRR with customer/supplier attendance |\n| Supplier Qualification | Speed-to-market focus | PPAP Level 3-5; FAI per AS9102B mandatory |\n| Traceability | BOM, version control | Configuration baseline, change authority boards, serial number traceability |\n| Documentation | Design files, firmware builds | FAIR, PPAP evidence packs, Design Assurance records |\n| Timeline | 6\u201312 months | 18\u201336 months |\n| Risk Management | FMEA optional | DFMEA & PFMEA mandatory; risk review at each gate |\n\n## Related Concepts\n\n- **[[MOC \u2014 NPI Process]]** \u2014 Hub for all NPI concepts\n- **[[Design Reviews \u2014 PDR CDR TRR]]** \u2014 Detailed explanation of each review's purpose and criteria\n- **[[PPAP in Aerospace \u2014 AS9145]]** \u2014 Supplier approval process and submission levels\n- **[[First Article Inspection \u2014 FAI and FAIR AS9102B]]** \u2014 FAI process and FAIR deliverable\n- **[[Configuration Management Basics]]** \u2014 Change control and baseline management post-production release\n- **[[AS9100D NPI Clauses]]** \u2014 Quality standard requirements across NPI phases\n- **[[MOC \u2014 Digital Systems]]** \u2014 PLM, ERP, MES integration supporting NPI\n\n## Sources\n\n- AS9100D (Requirement 8.1 Operational planning, 8.3 Design and development)\n- AS9102B (First Article Inspection specification)\n- AS9145 (Qualification and Approval of Aerospace and Defense Suppliers)\n- MIL-STD-1521B (Technical Reviews)\n\n---\n\n**Note:** %%VERIFY%% Timeline ranges (18\u201336 months) are representative but vary significantly by program complexity and customer requirements. Always reference program-specific plans.\n\nLast updated: 2026-04-13",
-      "tags": [
-        "phase/NPI",
-        "domain/aerospace-defense",
-        "standard/AS9100D"
-      ],
-      "status": "synthesized",
-      "url": "/concepts/aerospace-npi-process-overview",
-      "relatedConcepts": [
-        "configuration-management-basics",
-        "ppap-in-aerospace--as9145",
-        "moc--npi-process",
-        "first-article-inspection--fai-and-fair-as9102b",
-        "as9100d-npi-clauses",
-        "moc--digital-systems",
-        "design-reviews--pdr-cdr-trr",
-        "aerospace-npi-process-overview"
-      ],
-      "supportingArticles": []
-    },
-    {
       "id": "as9100d-npi-clauses",
       "title": "AS9100D NPI Clauses",
       "type": "concept",
@@ -40,14 +15,39 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/as9100d-npi-clauses",
       "relatedConcepts": [
-        "configuration-management-basics",
+        "design-reviews--pdr-cdr-trr",
+        "ppap-in-aerospace--as9145",
         "pfmea-and-dfmea",
+        "moc--npi-process",
         "aerospace-npi-process-overview",
+        "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b",
+        "as9100d-npi-clauses"
+      ],
+      "supportingArticles": []
+    },
+    {
+      "id": "aerospace-npi-process-overview",
+      "title": "Aerospace NPI Process Overview",
+      "type": "concept",
+      "description": "New Product Introduction (NPI) in aerospace and defense is a highly structured, gate-driven process that takes a concept from design through production release. Unlike commercial consumer electronics",
+      "content": "# Aerospace NPI Process Overview\n\n## What is Aerospace NPI?\n\nNew Product Introduction (NPI) in aerospace and defense is a highly structured, gate-driven process that takes a concept from design through production release. Unlike commercial consumer electronics (which use EVT/DVT/PVT), aerospace follows a more rigorous framework with mandatory design reviews, First Article Inspection (FAI), and Production Part Approval Process (PPAP) under standards like AS9100D and AS9145.\n\n## Key Phases\n\n### 1. Concept & Requirements (Pre-Design)\n- Define program objectives, requirements, and constraints\n- Establish initial design teams and supplier strategy\n- Compliance mapping (AS9100D clauses applicable to the product)\n\n### 2. Preliminary Design (Design Phase)\n- Complete system and subsystem-level design\n- Conduct **Preliminary Design Review (PDR)**; verify requirements are met\n- Identify critical design parameters, materials, and manufacturing risks\n- Initial DFMEA (Design FMEA)\n\n### 3. Critical Design & Detailed Engineering\n- Finalize all design details, drawings, specifications\n- Conduct **Critical Design Review (CDR)**; confirm design is robust and manufacturable\n- Complete DFMEA; allocate requirements to suppliers\n- Generate Bill of Materials (BOM)\n- Plan test and validation strategy\n\n### 4. Production Design & Prototype Build (Engineering Phase)\n- Build and test prototype/breadboard units (equivalent to EVT in consumer electronics)\n- Refine design based on test results\n- Supplier design qualification begins\n- Prepare manufacturing processes and tooling\n\n### 5. Pilot/Pre-Production (NPI Phase)\n- Build low-rate initial production (LRIP) or pilot units\n- Complete all qualification testing\n- Execute **First Article Inspection (FAI)** \u2014 per AS9102B\n- Supplier process validation and PPAP submission \u2014 per AS9145\n- Conduct **Test Readiness Review (TRR)**; confirm readiness for full production\n\n### 6. Production Release\n- Approve design, suppliers, and manufacturing processes\n- Release design to production\n- Establish configuration baseline\n- Begin production runs\n\n### 7. Sustaining\n- Manage engineering changes (ECNs) via Configuration Management\n- Monitor reliability, obsolescence, supplier performance\n- Sustain production support\n\n## Timeline\n\nA typical aerospace NPI for a moderate-complexity product spans **18\u201336 months** from concept to production, depending on:\n- Product complexity\n- Supplier maturity\n- Regulatory requirements (DO-254 for avionics, AS9100D for manufacturing, etc.)\n- Test and validation scope\n\nCommercial electronics compress this to 6\u201312 months; aerospace trades speed for reliability and traceability.\n\n## Mandatory Deliverables at Each Gate\n\n| Phase | Design Reviews | Key Documents | Supplier Readiness |\n|-------|---|---|---|\n| Pre-Design | Program Review | System Spec, Risk Register | Supplier RFQ |\n| Preliminary Design | **PDR** | Requirements, DFMEA V1, BOM (preliminary) | Supplier Design Bid |\n| Critical Design | **CDR** | Design Drawings, Specifications, DFMEA Final, Test Plan | Supplier Design Contract |\n| Prototype | (Internal reviews) | Prototype test reports, design changes log | Supplier Samples |\n| Pilot/LRIP | **TRR** | Process specs, **FAIR** (FAI Report), PPAP Level docs | **PPAP Submission** |\n| Production | Configuration Baseline | Design Release, Supplier Approval Status | Full Production Readiness |\n\n## Key Standards & Frameworks\n\n- **AS9100D** \u2014 Quality Management System requirements; clause 8.3 (design & development), 8.5.1 (production controls)\n- **AS9102B** \u2014 First Article Inspection; defines FAIR (First Article Inspection Report) contents\n- **AS9145** \u2014 Qualification and Approval of Aerospace Suppliers; includes PPAP tailored for aerospace\n- **MIL-STD-1521** \u2014 Technical Reviews; governs PDR, CDR, TRR format and entry/exit criteria (referenced in aerospace contracts)\n\n## Differences from Commercial Electronics (EVT/DVT/PVT)\n\n| Aspect | Commercial (EVT/DVT/PVT) | Aerospace (PDR/CDR/LRIP) |\n|--------|---|---|\n| Design Reviews | Often informal, 1\u20132 internal reviews | Formal gates: PDR, CDR, TRR with customer/supplier attendance |\n| Supplier Qualification | Speed-to-market focus | PPAP Level 3-5; FAI per AS9102B mandatory |\n| Traceability | BOM, version control | Configuration baseline, change authority boards, serial number traceability |\n| Documentation | Design files, firmware builds | FAIR, PPAP evidence packs, Design Assurance records |\n| Timeline | 6\u201312 months | 18\u201336 months |\n| Risk Management | FMEA optional | DFMEA & PFMEA mandatory; risk review at each gate |\n\n## Related Concepts\n\n- **[[MOC \u2014 NPI Process]]** \u2014 Hub for all NPI concepts\n- **[[Design Reviews \u2014 PDR CDR TRR]]** \u2014 Detailed explanation of each review's purpose and criteria\n- **[[PPAP in Aerospace \u2014 AS9145]]** \u2014 Supplier approval process and submission levels\n- **[[First Article Inspection \u2014 FAI and FAIR AS9102B]]** \u2014 FAI process and FAIR deliverable\n- **[[Configuration Management Basics]]** \u2014 Change control and baseline management post-production release\n- **[[AS9100D NPI Clauses]]** \u2014 Quality standard requirements across NPI phases\n- **[[MOC \u2014 Digital Systems]]** \u2014 PLM, ERP, MES integration supporting NPI\n\n## Sources\n\n- AS9100D (Requirement 8.1 Operational planning, 8.3 Design and development)\n- AS9102B (First Article Inspection specification)\n- AS9145 (Qualification and Approval of Aerospace and Defense Suppliers)\n- MIL-STD-1521B (Technical Reviews)\n\n---\n\n**Note:** %%VERIFY%% Timeline ranges (18\u201336 months) are representative but vary significantly by program complexity and customer requirements. Always reference program-specific plans.\n\nLast updated: 2026-04-13",
+      "tags": [
+        "phase/NPI",
+        "domain/aerospace-defense",
+        "standard/AS9100D"
+      ],
+      "status": "synthesized",
+      "url": "/concepts/aerospace-npi-process-overview",
+      "relatedConcepts": [
+        "design-reviews--pdr-cdr-trr",
+        "as9100d-npi-clauses",
+        "moc--digital-systems",
         "ppap-in-aerospace--as9145",
         "moc--npi-process",
+        "configuration-management-basics",
         "first-article-inspection--fai-and-fair-as9102b",
-        "design-reviews--pdr-cdr-trr",
-        "as9100d-npi-clauses"
+        "aerospace-npi-process-overview"
       ],
       "supportingArticles": []
     },
@@ -66,12 +66,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/configuration-management-basics",
       "relatedConcepts": [
-        "aerospace-npi-process-overview",
-        "moc--npi-process",
-        "first-article-inspection--fai-and-fair-as9102b",
         "as9100d-npi-clauses",
-        "moc--digital-systems",
         "design-reviews--pdr-cdr-trr",
+        "moc--digital-systems",
+        "moc--npi-process",
+        "aerospace-npi-process-overview",
+        "first-article-inspection--fai-and-fair-as9102b",
         "configuration-management-basics"
       ],
       "supportingArticles": []
@@ -90,13 +90,13 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/design-reviews--pdr-cdr-trr",
       "relatedConcepts": [
-        "configuration-management-basics",
-        "pfmea-and-dfmea",
-        "aerospace-npi-process-overview",
-        "moc--npi-process",
-        "first-article-inspection--fai-and-fair-as9102b",
         "as9100d-npi-clauses",
         "ppap-in-aerospace--as9145",
+        "pfmea-and-dfmea",
+        "moc--npi-process",
+        "aerospace-npi-process-overview",
+        "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b",
         "design-reviews--pdr-cdr-trr"
       ],
       "supportingArticles": []
@@ -118,14 +118,14 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/digital-thread-in-manufacturing",
       "relatedConcepts": [
-        "plm-erp-mes-integration",
-        "aerospace-npi-process-overview",
-        "engineering-change-management",
-        "first-article-inspection--fai-and-fair-as9102b",
-        "isa-95",
-        "digital-twins-in-manufacturing",
         "unified-namespace-uns",
-        "it-ot-convergence"
+        "it-ot-convergence",
+        "engineering-change-management",
+        "aerospace-npi-process-overview",
+        "digital-twins-in-manufacturing",
+        "first-article-inspection--fai-and-fair-as9102b",
+        "plm-erp-mes-integration",
+        "isa-95"
       ],
       "supportingArticles": []
     },
@@ -143,10 +143,10 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/digital-twins-in-manufacturing",
       "relatedConcepts": [
+        "it-ot-convergence",
         "plm-erp-mes-integration",
         "digital-thread-in-manufacturing",
-        "unified-namespace-uns",
-        "it-ot-convergence"
+        "unified-namespace-uns"
       ],
       "supportingArticles": []
     },
@@ -186,12 +186,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/first-article-inspection--fai-and-fair-as9102b",
       "relatedConcepts": [
-        "configuration-management-basics",
-        "pfmea-and-dfmea",
-        "aerospace-npi-process-overview",
-        "moc--npi-process",
         "as9100d-npi-clauses",
         "ppap-in-aerospace--as9145",
+        "pfmea-and-dfmea",
+        "moc--npi-process",
+        "aerospace-npi-process-overview",
+        "configuration-management-basics",
         "first-article-inspection--fai-and-fair-as9102b"
       ],
       "supportingArticles": []
@@ -216,25 +216,6 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "inventory-management-and-obsolescence",
-      "title": "Inventory Management and Obsolescence",
-      "type": "concept",
-      "description": "Obsolete inventory is any inventory a company can no longer sell or use due to lack of demand. In manufacturing specifically: - **Finished goods** \u2014 products that have reached end-of-life or been supe",
-      "content": "# Inventory Management and Obsolescence\n\n## What Is Obsolete Inventory\n\nObsolete inventory is any inventory a company can no longer sell or use due to lack of demand. In manufacturing specifically:\n- **Finished goods** \u2014 products that have reached end-of-life or been superseded\n- **Raw materials and components** \u2014 parts ordered for a product line that was cancelled or redesigned\n- **Work-in-process (WIP)** \u2014 partially assembled products with no demand to complete them\n\nObsolete inventory differs from **slow-moving inventory** (still sellable but demand has declined) and **excess inventory** (overstocked but still in demand).\n\n## Causes of Obsolescence\n\n**Demand-side causes:**\n- Product reaches end-of-life or is superseded by a new model\n- Customer cancellation or program termination\n- Demand forecast error \u2014 overestimated market demand\n\n**Supply-side causes:**\n- Engineering change orders (ECOs) that make existing stock non-conforming \u2014 a design change can instantly obsolete thousands of parts. See [[Engineering Change Management]].\n- Supplier part discontinuation (DMSMS \u2014 Diminishing Manufacturing Sources and Material Shortages) \u2014 critical in aerospace and defense\n- Procurement bulk discounts that created excess stock\n\n**Operational causes:**\n- Poor inventory tracking \u2014 stock forgotten in warehouse until expired or damaged\n- WIP abandoned due to schedule cancellation\n- Overproduction building buffer stock that never gets consumed\n\n## Accounting Treatment\n\nObsolete inventory must be accounted for under GAAP and IFRS when identified:\n\n- **Write-down** \u2014 revalue inventory to Net Realizable Value (NRV) when it still has some recoverable value\n- **Write-off** \u2014 eliminate inventory from books entirely when it has zero recoverable value\n\nBoth are non-cash expenses: debit to COGS or an obsolescence reserve, reducing net income and balance sheet asset value. Delayed recognition of obsolescence overstates profits and assets.\n\n%%VERIFY%% GAAP allows tax deductions on obsolete inventory if sold, donated, or destroyed \u2014 confirm with tax counsel for specific jurisdiction.\n\n## Prevention Strategies\n\n**Inventory visibility:**\n- Real-time stock tracking via ERP \u2014 know what you have, where, and how long it's been there\n- Aging reports \u2014 flag inventory approaching shelf-life limits or sitting beyond a threshold (e.g., 12 months without movement)\n- Integration with PLM so pending ECOs trigger automatic obsolescence risk flags on affected stock\n\n**Demand management:**\n- Tighter demand forecasting \u2014 ABC analysis to categorize parts by consumption velocity\n- Safety stock optimization \u2014 reduce buffer stock for slow-moving items\n- FIFO enforcement \u2014 first-in, first-out consumption reduces aging risk\n\n**Procurement discipline:**\n- Resist bulk discount temptation for slow-moving or single-program parts\n- Supplier managed inventory (SMI) shifts obsolescence risk to supplier for commodity parts\n- Last-time-buy planning for EOL components (especially critical in aerospace electronics)\n\n**Scrap and waste management:**\n- Distinguish **scrap** (in-process material waste from production) from **obsolescence** (unused finished/raw inventory)\n- Track scrap rates by operation, material, and operator to identify systemic issues\n- Rework vs. scrap decision gates: quantify rework cost vs. material recovery value before scrapping\n\n## ERP's Role\n\nERP systems are the primary tool for inventory visibility and obsolescence prevention:\n- Real-time inventory position across locations and warehouses\n- MRP (Material Requirements Planning) matches procurement to actual production schedules, reducing overbuy\n- Lot and serial number tracking for traceability and shelf-life management\n- Reporting tools for aging analysis and slow-mover identification\n\nWhen ERP is integrated with PLM, approved ECOs can automatically query affected stock and trigger disposition decisions before production runs non-conforming material. See [[PLM-ERP-MES Integration]].\n\n## Related Concepts\n\n- [[Engineering Change Management]] \u2014 ECOs are a primary cause of component obsolescence; ECM controls this impact\n- [[PLM-ERP-MES Integration]] \u2014 PLM-ERP integration enables ECO-triggered stock disposition",
-      "tags": [
-        "system/ERP",
-        "phase/sustaining",
-        "domain/manufacturing"
-      ],
-      "status": "synthesized",
-      "url": "/concepts/inventory-management-and-obsolescence",
-      "relatedConcepts": [
-        "plm-erp-mes-integration",
-        "engineering-change-management"
-      ],
-      "supportingArticles": []
-    },
-    {
       "id": "isa-95",
       "title": "ISA-95",
       "type": "concept",
@@ -249,10 +230,10 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/isa-95",
       "relatedConcepts": [
+        "it-ot-convergence",
         "plm-erp-mes-integration",
         "digital-thread-in-manufacturing",
-        "unified-namespace-uns",
-        "it-ot-convergence"
+        "unified-namespace-uns"
       ],
       "supportingArticles": []
     },
@@ -271,10 +252,29 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/it-ot-convergence",
       "relatedConcepts": [
-        "plm-erp-mes-integration",
         "digital-twins-in-manufacturing",
-        "unified-namespace-uns",
-        "isa-95"
+        "plm-erp-mes-integration",
+        "isa-95",
+        "unified-namespace-uns"
+      ],
+      "supportingArticles": []
+    },
+    {
+      "id": "inventory-management-and-obsolescence",
+      "title": "Inventory Management and Obsolescence",
+      "type": "concept",
+      "description": "Obsolete inventory is any inventory a company can no longer sell or use due to lack of demand. In manufacturing specifically: - **Finished goods** \u2014 products that have reached end-of-life or been supe",
+      "content": "# Inventory Management and Obsolescence\n\n## What Is Obsolete Inventory\n\nObsolete inventory is any inventory a company can no longer sell or use due to lack of demand. In manufacturing specifically:\n- **Finished goods** \u2014 products that have reached end-of-life or been superseded\n- **Raw materials and components** \u2014 parts ordered for a product line that was cancelled or redesigned\n- **Work-in-process (WIP)** \u2014 partially assembled products with no demand to complete them\n\nObsolete inventory differs from **slow-moving inventory** (still sellable but demand has declined) and **excess inventory** (overstocked but still in demand).\n\n## Causes of Obsolescence\n\n**Demand-side causes:**\n- Product reaches end-of-life or is superseded by a new model\n- Customer cancellation or program termination\n- Demand forecast error \u2014 overestimated market demand\n\n**Supply-side causes:**\n- Engineering change orders (ECOs) that make existing stock non-conforming \u2014 a design change can instantly obsolete thousands of parts. See [[Engineering Change Management]].\n- Supplier part discontinuation (DMSMS \u2014 Diminishing Manufacturing Sources and Material Shortages) \u2014 critical in aerospace and defense\n- Procurement bulk discounts that created excess stock\n\n**Operational causes:**\n- Poor inventory tracking \u2014 stock forgotten in warehouse until expired or damaged\n- WIP abandoned due to schedule cancellation\n- Overproduction building buffer stock that never gets consumed\n\n## Accounting Treatment\n\nObsolete inventory must be accounted for under GAAP and IFRS when identified:\n\n- **Write-down** \u2014 revalue inventory to Net Realizable Value (NRV) when it still has some recoverable value\n- **Write-off** \u2014 eliminate inventory from books entirely when it has zero recoverable value\n\nBoth are non-cash expenses: debit to COGS or an obsolescence reserve, reducing net income and balance sheet asset value. Delayed recognition of obsolescence overstates profits and assets.\n\n%%VERIFY%% GAAP allows tax deductions on obsolete inventory if sold, donated, or destroyed \u2014 confirm with tax counsel for specific jurisdiction.\n\n## Prevention Strategies\n\n**Inventory visibility:**\n- Real-time stock tracking via ERP \u2014 know what you have, where, and how long it's been there\n- Aging reports \u2014 flag inventory approaching shelf-life limits or sitting beyond a threshold (e.g., 12 months without movement)\n- Integration with PLM so pending ECOs trigger automatic obsolescence risk flags on affected stock\n\n**Demand management:**\n- Tighter demand forecasting \u2014 ABC analysis to categorize parts by consumption velocity\n- Safety stock optimization \u2014 reduce buffer stock for slow-moving items\n- FIFO enforcement \u2014 first-in, first-out consumption reduces aging risk\n\n**Procurement discipline:**\n- Resist bulk discount temptation for slow-moving or single-program parts\n- Supplier managed inventory (SMI) shifts obsolescence risk to supplier for commodity parts\n- Last-time-buy planning for EOL components (especially critical in aerospace electronics)\n\n**Scrap and waste management:**\n- Distinguish **scrap** (in-process material waste from production) from **obsolescence** (unused finished/raw inventory)\n- Track scrap rates by operation, material, and operator to identify systemic issues\n- Rework vs. scrap decision gates: quantify rework cost vs. material recovery value before scrapping\n\n## ERP's Role\n\nERP systems are the primary tool for inventory visibility and obsolescence prevention:\n- Real-time inventory position across locations and warehouses\n- MRP (Material Requirements Planning) matches procurement to actual production schedules, reducing overbuy\n- Lot and serial number tracking for traceability and shelf-life management\n- Reporting tools for aging analysis and slow-mover identification\n\nWhen ERP is integrated with PLM, approved ECOs can automatically query affected stock and trigger disposition decisions before production runs non-conforming material. See [[PLM-ERP-MES Integration]].\n\n## Related Concepts\n\n- [[Engineering Change Management]] \u2014 ECOs are a primary cause of component obsolescence; ECM controls this impact\n- [[PLM-ERP-MES Integration]] \u2014 PLM-ERP integration enables ECO-triggered stock disposition",
+      "tags": [
+        "system/ERP",
+        "phase/sustaining",
+        "domain/manufacturing"
+      ],
+      "status": "synthesized",
+      "url": "/concepts/inventory-management-and-obsolescence",
+      "relatedConcepts": [
+        "engineering-change-management",
+        "plm-erp-mes-integration"
       ],
       "supportingArticles": []
     },
@@ -293,9 +293,9 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/moc--digital-systems",
       "relatedConcepts": [
+        "aerospace-npi-process-overview",
         "pfmea-and-dfmea",
-        "configuration-management-basics",
-        "aerospace-npi-process-overview"
+        "configuration-management-basics"
       ],
       "supportingArticles": []
     },
@@ -312,14 +312,14 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/moc--npi-process",
       "relatedConcepts": [
-        "configuration-management-basics",
-        "pfmea-and-dfmea",
-        "aerospace-npi-process-overview",
-        "ppap-in-aerospace--as9145",
-        "first-article-inspection--fai-and-fair-as9102b",
+        "design-reviews--pdr-cdr-trr",
         "as9100d-npi-clauses",
         "moc--digital-systems",
-        "design-reviews--pdr-cdr-trr"
+        "ppap-in-aerospace--as9145",
+        "pfmea-and-dfmea",
+        "aerospace-npi-process-overview",
+        "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b"
       ],
       "supportingArticles": []
     },
@@ -339,12 +339,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/pfmea-and-dfmea",
       "relatedConcepts": [
-        "configuration-management-basics",
-        "aerospace-npi-process-overview",
+        "design-reviews--pdr-cdr-trr",
+        "as9100d-npi-clauses",
         "ppap-in-aerospace--as9145",
         "moc--npi-process",
-        "as9100d-npi-clauses",
-        "design-reviews--pdr-cdr-trr",
+        "aerospace-npi-process-overview",
+        "configuration-management-basics",
         "pfmea-and-dfmea"
       ],
       "supportingArticles": []
@@ -363,9 +363,9 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/plc-hmi-and-scada",
       "relatedConcepts": [
+        "it-ot-convergence",
         "unified-namespace-uns",
-        "isa-95",
-        "it-ot-convergence"
+        "isa-95"
       ],
       "supportingArticles": []
     },
@@ -385,10 +385,10 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/plm-erp-mes-integration",
       "relatedConcepts": [
+        "it-ot-convergence",
         "engineering-change-management",
         "digital-thread-in-manufacturing",
-        "isa-95",
-        "it-ot-convergence"
+        "isa-95"
       ],
       "supportingArticles": []
     },
@@ -408,12 +408,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/ppap-in-aerospace--as9145",
       "relatedConcepts": [
-        "configuration-management-basics",
-        "pfmea-and-dfmea",
-        "aerospace-npi-process-overview",
-        "moc--npi-process",
-        "first-article-inspection--fai-and-fair-as9102b",
         "as9100d-npi-clauses",
+        "pfmea-and-dfmea",
+        "moc--npi-process",
+        "aerospace-npi-process-overview",
+        "configuration-management-basics",
+        "first-article-inspection--fai-and-fair-as9102b",
         "ppap-in-aerospace--as9145"
       ],
       "supportingArticles": []
@@ -433,10 +433,10 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/unified-namespace-uns",
       "relatedConcepts": [
+        "it-ot-convergence",
         "plm-erp-mes-integration",
         "digital-twins-in-manufacturing",
-        "isa-95",
-        "it-ot-convergence"
+        "isa-95"
       ],
       "supportingArticles": []
     },
@@ -453,18 +453,6 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "applications-of-digital-twins-in-manufacturing",
-      "title": "What is Digital Twin Technology?",
-      "type": "source",
-      "description": "A digital twin uses computer models, data, and analytics to create a virtual copy or mirror of a real-life object or system. By replicating it digitally, organizations are able to better understand, m",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/applications-of-digital-twins-in-manufacturing",
-      "source": "https://www.cyngn.com/blog/applications-of-digital-twins-in-manufacturing",
-      "relatedConcepts": [],
-      "supportingArticles": []
-    },
-    {
       "id": "as9100-clause-guide-for-aerospace-organizations",
       "title": "Request a Quote",
       "type": "source",
@@ -473,6 +461,18 @@ const graphData = {
       "status": "raw",
       "url": "/sources/as9100-clause-guide-for-aerospace-organizations",
       "source": "https://amtivo.com/us/resources/guides-downloads/key-aerospace-9100-clause-guide/",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
+      "id": "applications-of-digital-twins-in-manufacturing",
+      "title": "What is Digital Twin Technology?",
+      "type": "source",
+      "description": "A digital twin uses computer models, data, and analytics to create a virtual copy or mirror of a real-life object or system. By replicating it digitally, organizations are able to better understand, m",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/applications-of-digital-twins-in-manufacturing",
+      "source": "https://www.cyngn.com/blog/applications-of-digital-twins-in-manufacturing",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -557,18 +557,6 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "engineering-change-management-definition-process-and-best-practices",
-      "title": "See the solution in action",
-      "type": "source",
-      "description": "[Request a demo](https://www.aletiq.com/en/contact/book-a-meeting)",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/engineering-change-management-definition-process-and-best-practices",
-      "source": "https://www.aletiq.com/en/post/engineering-change-management",
-      "relatedConcepts": [],
-      "supportingArticles": []
-    },
-    {
       "id": "engineering-change-order-eco-definition-types-process-and-example",
       "title": "What Is an Engineering Change Order (ECO)?",
       "type": "source",
@@ -577,6 +565,18 @@ const graphData = {
       "status": "raw",
       "url": "/sources/engineering-change-order-eco-definition-types-process-and-example",
       "source": "https://simplerqms.com/engineering-change-order/",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
+      "id": "engineering-change-management-definition-process-and-best-practices",
+      "title": "See the solution in action",
+      "type": "source",
+      "description": "[Request a demo](https://www.aletiq.com/en/contact/book-a-meeting)",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/engineering-change-management-definition-process-and-best-practices",
+      "source": "https://www.aletiq.com/en/post/engineering-change-management",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -667,6 +667,18 @@ const graphData = {
       "supportingArticles": []
     },
     {
+      "id": "itot-convergence-a-complete-guide",
+      "title": "Bridging the Gap Between IT & OT on the Factory Floor",
+      "type": "source",
+      "description": "In the production plant, it can often feel like a tug of war between two sides of the process: the machines and equipment performing the physical labor, and the data, servers, and digital devices that",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/itot-convergence-a-complete-guide",
+      "source": "https://orise.com/it-ot-convergence-explained/",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
       "id": "implementing-unified-namespace-uns-with-mqtt-sparkplug",
       "title": "Implementing Unified Namespace (UNS) With MQTT Sparkplug",
       "type": "source",
@@ -691,14 +703,14 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "itot-convergence-a-complete-guide",
-      "title": "Bridging the Gap Between IT & OT on the Factory Floor",
+      "id": "otit-convergence-and-physical-ai-innovation",
+      "title": "OTIT Convergence and Physical AI Innovation",
       "type": "source",
-      "description": "In the production plant, it can often feel like a tug of war between two sides of the process: the machines and equipment performing the physical labor, and the data, servers, and digital devices that",
+      "description": "",
       "tags": [],
       "status": "raw",
-      "url": "/sources/itot-convergence-a-complete-guide",
-      "source": "https://orise.com/it-ot-convergence-explained/",
+      "url": "/sources/otit-convergence-and-physical-ai-innovation",
+      "source": "https://www.hcltech.com/trends-and-insights/otit-convergence-enabling-next-wave-innovation-physical-ai",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -711,18 +723,6 @@ const graphData = {
       "status": "raw",
       "url": "/sources/optimize-your-parts-inventory-to-reduce-obsolescence-risk",
       "source": "https://ats-service.com/blog/reduce-parts-obsolescence-risk",
-      "relatedConcepts": [],
-      "supportingArticles": []
-    },
-    {
-      "id": "otit-convergence-and-physical-ai-innovation",
-      "title": "OTIT Convergence and Physical AI Innovation",
-      "type": "source",
-      "description": "",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/otit-convergence-and-physical-ai-innovation",
-      "source": "https://www.hcltech.com/trends-and-insights/otit-convergence-enabling-next-wave-innovation-physical-ai",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -778,18 +778,6 @@ const graphData = {
       "supportingArticles": []
     },
     {
-      "id": "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
-      "title": "Abstract",
-      "type": "source",
-      "description": "As the adoption of Industry 4.0 advances and the manufacturing process becomes increasingly digital, the Digital Twin (DT) will prove invaluable for testing and simulating new parameters and design va",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
-      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10246533/",
-      "relatedConcepts": [],
-      "supportingArticles": []
-    },
-    {
       "id": "the-roles-of-erp-and-plm-in-manufacturing---now-with-mes",
       "title": "The Roles of ERP and PLM in Manufacturing - now with MES!",
       "type": "source",
@@ -801,6 +789,18 @@ const graphData = {
       "status": "raw",
       "url": "/sources/the-roles-of-erp-and-plm-in-manufacturing---now-with-mes",
       "source": "https://tech-clarity.com/erp-plm-mes/1095",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
+      "id": "the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
+      "title": "Abstract",
+      "type": "source",
+      "description": "As the adoption of Industry 4.0 advances and the manufacturing process becomes increasingly digital, the Digital Twin (DT) will prove invaluable for testing and simulating new parameters and design va",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/the-impact-of-digital-twins-on-the-evolution-of-intelligent-manufacturing-and-industry-40",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10246533/",
       "relatedConcepts": [],
       "supportingArticles": []
     },
@@ -867,6 +867,18 @@ const graphData = {
       "supportingArticles": []
     },
     {
+      "id": "what-is-obsolete-inventory-and-how-to-prevent-it",
+      "title": "What is obsolete inventory?",
+      "type": "source",
+      "description": "Obsolete inventory is any inventory that a company can no longer sell or use due to lack of demand. This mostly occurs when goods reach the end of their product life cycle or in cases of sudden sales",
+      "tags": [],
+      "status": "raw",
+      "url": "/sources/what-is-obsolete-inventory-and-how-to-prevent-it",
+      "source": "https://www.mrpeasy.com/blog/obsolete-inventory/",
+      "relatedConcepts": [],
+      "supportingArticles": []
+    },
+    {
       "id": "what-is-engineering-change-management",
       "title": "Introduction",
       "type": "source",
@@ -891,36 +903,44 @@ const graphData = {
       "source": "https://www.ansys.com/simulation-topics/what-is-hardware-in-the-loop-testing",
       "relatedConcepts": [],
       "supportingArticles": []
-    },
-    {
-      "id": "what-is-obsolete-inventory-and-how-to-prevent-it",
-      "title": "What is obsolete inventory?",
-      "type": "source",
-      "description": "Obsolete inventory is any inventory that a company can no longer sell or use due to lack of demand. This mostly occurs when goods reach the end of their product life cycle or in cases of sudden sales",
-      "tags": [],
-      "status": "raw",
-      "url": "/sources/what-is-obsolete-inventory-and-how-to-prevent-it",
-      "source": "https://www.mrpeasy.com/blog/obsolete-inventory/",
-      "relatedConcepts": [],
-      "supportingArticles": []
     }
   ],
   "links": [
     {
-      "source": "aerospace-npi-process-overview",
-      "target": "configuration-management-basics"
+      "source": "as9100d-npi-clauses",
+      "target": "design-reviews--pdr-cdr-trr"
     },
     {
-      "source": "aerospace-npi-process-overview",
+      "source": "as9100d-npi-clauses",
       "target": "ppap-in-aerospace--as9145"
     },
     {
-      "source": "aerospace-npi-process-overview",
+      "source": "as9100d-npi-clauses",
+      "target": "pfmea-and-dfmea"
+    },
+    {
+      "source": "as9100d-npi-clauses",
       "target": "moc--npi-process"
     },
     {
-      "source": "aerospace-npi-process-overview",
+      "source": "as9100d-npi-clauses",
+      "target": "aerospace-npi-process-overview"
+    },
+    {
+      "source": "as9100d-npi-clauses",
+      "target": "configuration-management-basics"
+    },
+    {
+      "source": "as9100d-npi-clauses",
       "target": "first-article-inspection--fai-and-fair-as9102b"
+    },
+    {
+      "source": "as9100d-npi-clauses",
+      "target": "as9100d-npi-clauses"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "design-reviews--pdr-cdr-trr"
     },
     {
       "source": "aerospace-npi-process-overview",
@@ -932,59 +952,31 @@ const graphData = {
     },
     {
       "source": "aerospace-npi-process-overview",
-      "target": "design-reviews--pdr-cdr-trr"
+      "target": "ppap-in-aerospace--as9145"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "moc--npi-process"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "configuration-management-basics"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "aerospace-npi-process-overview",
       "target": "aerospace-npi-process-overview"
     },
     {
-      "source": "as9100d-npi-clauses",
-      "target": "configuration-management-basics"
+      "source": "configuration-management-basics",
+      "target": "as9100d-npi-clauses"
     },
     {
-      "source": "as9100d-npi-clauses",
-      "target": "pfmea-and-dfmea"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "aerospace-npi-process-overview"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "ppap-in-aerospace--as9145"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
-    },
-    {
-      "source": "as9100d-npi-clauses",
+      "source": "configuration-management-basics",
       "target": "design-reviews--pdr-cdr-trr"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "as9100d-npi-clauses"
-    },
-    {
-      "source": "configuration-management-basics",
-      "target": "aerospace-npi-process-overview"
-    },
-    {
-      "source": "configuration-management-basics",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "configuration-management-basics",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
-    },
-    {
-      "source": "configuration-management-basics",
-      "target": "as9100d-npi-clauses"
     },
     {
       "source": "configuration-management-basics",
@@ -992,31 +984,19 @@ const graphData = {
     },
     {
       "source": "configuration-management-basics",
-      "target": "design-reviews--pdr-cdr-trr"
+      "target": "moc--npi-process"
+    },
+    {
+      "source": "configuration-management-basics",
+      "target": "aerospace-npi-process-overview"
+    },
+    {
+      "source": "configuration-management-basics",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "configuration-management-basics",
       "target": "configuration-management-basics"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "configuration-management-basics"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "pfmea-and-dfmea"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "aerospace-npi-process-overview"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "design-reviews--pdr-cdr-trr",
@@ -1028,31 +1008,27 @@ const graphData = {
     },
     {
       "source": "design-reviews--pdr-cdr-trr",
-      "target": "design-reviews--pdr-cdr-trr"
+      "target": "pfmea-and-dfmea"
     },
     {
-      "source": "digital-thread-in-manufacturing",
-      "target": "plm-erp-mes-integration"
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "moc--npi-process"
     },
     {
-      "source": "digital-thread-in-manufacturing",
+      "source": "design-reviews--pdr-cdr-trr",
       "target": "aerospace-npi-process-overview"
     },
     {
-      "source": "digital-thread-in-manufacturing",
-      "target": "engineering-change-management"
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "configuration-management-basics"
     },
     {
-      "source": "digital-thread-in-manufacturing",
+      "source": "design-reviews--pdr-cdr-trr",
       "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
-      "source": "digital-thread-in-manufacturing",
-      "target": "isa-95"
-    },
-    {
-      "source": "digital-thread-in-manufacturing",
-      "target": "digital-twins-in-manufacturing"
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "design-reviews--pdr-cdr-trr"
     },
     {
       "source": "digital-thread-in-manufacturing",
@@ -1064,7 +1040,35 @@ const graphData = {
     },
     {
       "source": "digital-thread-in-manufacturing",
+      "target": "engineering-change-management"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
+      "target": "aerospace-npi-process-overview"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
+      "target": "digital-twins-in-manufacturing"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
+      "target": "plm-erp-mes-integration"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
+      "target": "isa-95"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
       "target": "digital-thread-in-manufacturing-connecting-cad-plm-erp-and-mes-for-integrated-product-development"
+    },
+    {
+      "source": "digital-twins-in-manufacturing",
+      "target": "it-ot-convergence"
     },
     {
       "source": "digital-twins-in-manufacturing",
@@ -1077,10 +1081,6 @@ const graphData = {
     {
       "source": "digital-twins-in-manufacturing",
       "target": "unified-namespace-uns"
-    },
-    {
-      "source": "digital-twins-in-manufacturing",
-      "target": "it-ot-convergence"
     },
     {
       "source": "digital-twins-in-manufacturing",
@@ -1132,7 +1132,11 @@ const graphData = {
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "configuration-management-basics"
+      "target": "as9100d-npi-clauses"
+    },
+    {
+      "source": "first-article-inspection--fai-and-fair-as9102b",
+      "target": "ppap-in-aerospace--as9145"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
@@ -1140,19 +1144,15 @@ const graphData = {
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "aerospace-npi-process-overview"
-    },
-    {
-      "source": "first-article-inspection--fai-and-fair-as9102b",
       "target": "moc--npi-process"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "as9100d-npi-clauses"
+      "target": "aerospace-npi-process-overview"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "ppap-in-aerospace--as9145"
+      "target": "configuration-management-basics"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
@@ -1179,24 +1179,8 @@ const graphData = {
       "target": "how-to-automate-hmi-systems-testing"
     },
     {
-      "source": "inventory-management-and-obsolescence",
-      "target": "plm-erp-mes-integration"
-    },
-    {
-      "source": "inventory-management-and-obsolescence",
-      "target": "engineering-change-management"
-    },
-    {
-      "source": "inventory-management-and-obsolescence",
-      "target": "what-is-obsolete-inventory-and-how-to-prevent-it"
-    },
-    {
-      "source": "inventory-management-and-obsolescence",
-      "target": "optimize-your-parts-inventory-to-reduce-obsolescence-risk"
-    },
-    {
-      "source": "inventory-management-and-obsolescence",
-      "target": "scraps-and-waste-inventory-management-in-manufacturing-operations"
+      "source": "isa-95",
+      "target": "it-ot-convergence"
     },
     {
       "source": "isa-95",
@@ -1211,8 +1195,8 @@ const graphData = {
       "target": "unified-namespace-uns"
     },
     {
-      "source": "isa-95",
-      "target": "it-ot-convergence"
+      "source": "it-ot-convergence",
+      "target": "digital-twins-in-manufacturing"
     },
     {
       "source": "it-ot-convergence",
@@ -1220,15 +1204,11 @@ const graphData = {
     },
     {
       "source": "it-ot-convergence",
-      "target": "digital-twins-in-manufacturing"
+      "target": "isa-95"
     },
     {
       "source": "it-ot-convergence",
       "target": "unified-namespace-uns"
-    },
-    {
-      "source": "it-ot-convergence",
-      "target": "isa-95"
     },
     {
       "source": "it-ot-convergence",
@@ -1243,6 +1223,30 @@ const graphData = {
       "target": "otit-convergence-and-physical-ai-innovation"
     },
     {
+      "source": "inventory-management-and-obsolescence",
+      "target": "engineering-change-management"
+    },
+    {
+      "source": "inventory-management-and-obsolescence",
+      "target": "plm-erp-mes-integration"
+    },
+    {
+      "source": "inventory-management-and-obsolescence",
+      "target": "what-is-obsolete-inventory-and-how-to-prevent-it"
+    },
+    {
+      "source": "inventory-management-and-obsolescence",
+      "target": "optimize-your-parts-inventory-to-reduce-obsolescence-risk"
+    },
+    {
+      "source": "inventory-management-and-obsolescence",
+      "target": "scraps-and-waste-inventory-management-in-manufacturing-operations"
+    },
+    {
+      "source": "moc--digital-systems",
+      "target": "aerospace-npi-process-overview"
+    },
+    {
       "source": "moc--digital-systems",
       "target": "pfmea-and-dfmea"
     },
@@ -1251,28 +1255,8 @@ const graphData = {
       "target": "configuration-management-basics"
     },
     {
-      "source": "moc--digital-systems",
-      "target": "aerospace-npi-process-overview"
-    },
-    {
       "source": "moc--npi-process",
-      "target": "configuration-management-basics"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "pfmea-and-dfmea"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "aerospace-npi-process-overview"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "ppap-in-aerospace--as9145"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
+      "target": "design-reviews--pdr-cdr-trr"
     },
     {
       "source": "moc--npi-process",
@@ -1284,15 +1268,31 @@ const graphData = {
     },
     {
       "source": "moc--npi-process",
+      "target": "ppap-in-aerospace--as9145"
+    },
+    {
+      "source": "moc--npi-process",
+      "target": "pfmea-and-dfmea"
+    },
+    {
+      "source": "moc--npi-process",
+      "target": "aerospace-npi-process-overview"
+    },
+    {
+      "source": "moc--npi-process",
+      "target": "configuration-management-basics"
+    },
+    {
+      "source": "moc--npi-process",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
+    },
+    {
+      "source": "pfmea-and-dfmea",
       "target": "design-reviews--pdr-cdr-trr"
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "configuration-management-basics"
-    },
-    {
-      "source": "pfmea-and-dfmea",
-      "target": "aerospace-npi-process-overview"
+      "target": "as9100d-npi-clauses"
     },
     {
       "source": "pfmea-and-dfmea",
@@ -1304,15 +1304,19 @@ const graphData = {
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "as9100d-npi-clauses"
+      "target": "aerospace-npi-process-overview"
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "design-reviews--pdr-cdr-trr"
+      "target": "configuration-management-basics"
     },
     {
       "source": "pfmea-and-dfmea",
       "target": "pfmea-and-dfmea"
+    },
+    {
+      "source": "plc-hmi-and-scada",
+      "target": "it-ot-convergence"
     },
     {
       "source": "plc-hmi-and-scada",
@@ -1321,10 +1325,6 @@ const graphData = {
     {
       "source": "plc-hmi-and-scada",
       "target": "isa-95"
-    },
-    {
-      "source": "plc-hmi-and-scada",
-      "target": "it-ot-convergence"
     },
     {
       "source": "plc-hmi-and-scada",
@@ -1340,6 +1340,10 @@ const graphData = {
     },
     {
       "source": "plm-erp-mes-integration",
+      "target": "it-ot-convergence"
+    },
+    {
+      "source": "plm-erp-mes-integration",
       "target": "engineering-change-management"
     },
     {
@@ -1349,10 +1353,6 @@ const graphData = {
     {
       "source": "plm-erp-mes-integration",
       "target": "isa-95"
-    },
-    {
-      "source": "plm-erp-mes-integration",
-      "target": "it-ot-convergence"
     },
     {
       "source": "plm-erp-mes-integration",
@@ -1368,7 +1368,7 @@ const graphData = {
     },
     {
       "source": "ppap-in-aerospace--as9145",
-      "target": "configuration-management-basics"
+      "target": "as9100d-npi-clauses"
     },
     {
       "source": "ppap-in-aerospace--as9145",
@@ -1376,11 +1376,15 @@ const graphData = {
     },
     {
       "source": "ppap-in-aerospace--as9145",
+      "target": "moc--npi-process"
+    },
+    {
+      "source": "ppap-in-aerospace--as9145",
       "target": "aerospace-npi-process-overview"
     },
     {
       "source": "ppap-in-aerospace--as9145",
-      "target": "moc--npi-process"
+      "target": "configuration-management-basics"
     },
     {
       "source": "ppap-in-aerospace--as9145",
@@ -1388,11 +1392,11 @@ const graphData = {
     },
     {
       "source": "ppap-in-aerospace--as9145",
-      "target": "as9100d-npi-clauses"
+      "target": "ppap-in-aerospace--as9145"
     },
     {
-      "source": "ppap-in-aerospace--as9145",
-      "target": "ppap-in-aerospace--as9145"
+      "source": "unified-namespace-uns",
+      "target": "it-ot-convergence"
     },
     {
       "source": "unified-namespace-uns",
@@ -1405,10 +1409,6 @@ const graphData = {
     {
       "source": "unified-namespace-uns",
       "target": "isa-95"
-    },
-    {
-      "source": "unified-namespace-uns",
-      "target": "it-ot-convergence"
     },
     {
       "source": "unified-namespace-uns",
