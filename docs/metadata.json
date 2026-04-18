@@ -14,13 +14,13 @@
     "status": "synthesized",
     "url": "/concepts/as9100d-npi-clauses",
     "relatedConcepts": [
-      "design-reviews--pdr-cdr-trr",
       "ppap-in-aerospace--as9145",
-      "pfmea-and-dfmea",
-      "moc--npi-process",
-      "aerospace-npi-process-overview",
-      "configuration-management-basics",
+      "design-reviews--pdr-cdr-trr",
       "first-article-inspection--fai-and-fair-as9102b",
+      "aerospace-npi-process-overview",
+      "moc--npi-process",
+      "pfmea-and-dfmea",
+      "configuration-management-basics",
       "as9100d-npi-clauses"
     ],
     "supportingArticles": []
@@ -39,13 +39,13 @@
     "status": "synthesized",
     "url": "/concepts/aerospace-npi-process-overview",
     "relatedConcepts": [
-      "design-reviews--pdr-cdr-trr",
-      "as9100d-npi-clauses",
-      "moc--digital-systems",
       "ppap-in-aerospace--as9145",
+      "as9100d-npi-clauses",
+      "design-reviews--pdr-cdr-trr",
+      "first-article-inspection--fai-and-fair-as9102b",
       "moc--npi-process",
       "configuration-management-basics",
-      "first-article-inspection--fai-and-fair-as9102b",
+      "moc--digital-systems",
       "aerospace-npi-process-overview"
     ],
     "supportingArticles": []
@@ -67,10 +67,10 @@
     "relatedConcepts": [
       "as9100d-npi-clauses",
       "design-reviews--pdr-cdr-trr",
-      "moc--digital-systems",
-      "moc--npi-process",
-      "aerospace-npi-process-overview",
       "first-article-inspection--fai-and-fair-as9102b",
+      "aerospace-npi-process-overview",
+      "moc--npi-process",
+      "moc--digital-systems",
       "configuration-management-basics"
     ],
     "supportingArticles": []
@@ -89,13 +89,13 @@
     "status": "synthesized",
     "url": "/concepts/design-reviews--pdr-cdr-trr",
     "relatedConcepts": [
-      "as9100d-npi-clauses",
       "ppap-in-aerospace--as9145",
-      "pfmea-and-dfmea",
-      "moc--npi-process",
-      "aerospace-npi-process-overview",
-      "configuration-management-basics",
+      "as9100d-npi-clauses",
       "first-article-inspection--fai-and-fair-as9102b",
+      "aerospace-npi-process-overview",
+      "moc--npi-process",
+      "pfmea-and-dfmea",
+      "configuration-management-basics",
       "design-reviews--pdr-cdr-trr"
     ],
     "supportingArticles": []
@@ -117,14 +117,14 @@
     "status": "synthesized",
     "url": "/concepts/digital-thread-in-manufacturing",
     "relatedConcepts": [
-      "unified-namespace-uns",
-      "it-ot-convergence",
-      "engineering-change-management",
-      "aerospace-npi-process-overview",
-      "digital-twins-in-manufacturing",
-      "first-article-inspection--fai-and-fair-as9102b",
       "plm-erp-mes-integration",
-      "isa-95"
+      "unified-namespace-uns",
+      "first-article-inspection--fai-and-fair-as9102b",
+      "aerospace-npi-process-overview",
+      "isa-95",
+      "it-ot-convergence",
+      "digital-twins-in-manufacturing",
+      "engineering-change-management"
     ],
     "supportingArticles": []
   },
@@ -142,9 +142,9 @@
     "status": "synthesized",
     "url": "/concepts/digital-twins-in-manufacturing",
     "relatedConcepts": [
-      "it-ot-convergence",
       "plm-erp-mes-integration",
       "digital-thread-in-manufacturing",
+      "it-ot-convergence",
       "unified-namespace-uns"
     ],
     "supportingArticles": []
@@ -165,8 +165,8 @@
     "url": "/concepts/engineering-change-management",
     "relatedConcepts": [
       "plm-erp-mes-integration",
-      "digital-thread-in-manufacturing",
-      "isa-95"
+      "isa-95",
+      "digital-thread-in-manufacturing"
     ],
     "supportingArticles": []
   },
@@ -185,11 +185,11 @@
     "status": "synthesized",
     "url": "/concepts/first-article-inspection--fai-and-fair-as9102b",
     "relatedConcepts": [
-      "as9100d-npi-clauses",
       "ppap-in-aerospace--as9145",
-      "pfmea-and-dfmea",
-      "moc--npi-process",
+      "as9100d-npi-clauses",
       "aerospace-npi-process-overview",
+      "moc--npi-process",
+      "pfmea-and-dfmea",
       "configuration-management-basics",
       "first-article-inspection--fai-and-fair-as9102b"
     ],
@@ -229,9 +229,9 @@
     "status": "synthesized",
     "url": "/concepts/isa-95",
     "relatedConcepts": [
-      "it-ot-convergence",
       "plm-erp-mes-integration",
       "digital-thread-in-manufacturing",
+      "it-ot-convergence",
       "unified-namespace-uns"
     ],
     "supportingArticles": []
@@ -251,10 +251,10 @@
     "status": "synthesized",
     "url": "/concepts/it-ot-convergence",
     "relatedConcepts": [
-      "digital-twins-in-manufacturing",
       "plm-erp-mes-integration",
       "isa-95",
-      "unified-namespace-uns"
+      "unified-namespace-uns",
+      "digital-twins-in-manufacturing"
     ],
     "supportingArticles": []
   },
@@ -272,8 +272,8 @@
     "status": "synthesized",
     "url": "/concepts/inventory-management-and-obsolescence",
     "relatedConcepts": [
-      "engineering-change-management",
-      "plm-erp-mes-integration"
+      "plm-erp-mes-integration",
+      "engineering-change-management"
     ],
     "supportingArticles": []
   },
@@ -293,8 +293,8 @@
     "url": "/concepts/moc--digital-systems",
     "relatedConcepts": [
       "aerospace-npi-process-overview",
-      "pfmea-and-dfmea",
-      "configuration-management-basics"
+      "configuration-management-basics",
+      "pfmea-and-dfmea"
     ],
     "supportingArticles": []
   },
@@ -311,14 +311,14 @@
     "status": "synthesized",
     "url": "/concepts/moc--npi-process",
     "relatedConcepts": [
-      "design-reviews--pdr-cdr-trr",
-      "as9100d-npi-clauses",
-      "moc--digital-systems",
       "ppap-in-aerospace--as9145",
-      "pfmea-and-dfmea",
+      "as9100d-npi-clauses",
+      "design-reviews--pdr-cdr-trr",
+      "first-article-inspection--fai-and-fair-as9102b",
       "aerospace-npi-process-overview",
+      "pfmea-and-dfmea",
       "configuration-management-basics",
-      "first-article-inspection--fai-and-fair-as9102b"
+      "moc--digital-systems"
     ],
     "supportingArticles": []
   },
@@ -338,11 +338,11 @@
     "status": "synthesized",
     "url": "/concepts/pfmea-and-dfmea",
     "relatedConcepts": [
-      "design-reviews--pdr-cdr-trr",
-      "as9100d-npi-clauses",
       "ppap-in-aerospace--as9145",
-      "moc--npi-process",
+      "as9100d-npi-clauses",
+      "design-reviews--pdr-cdr-trr",
       "aerospace-npi-process-overview",
+      "moc--npi-process",
       "configuration-management-basics",
       "pfmea-and-dfmea"
     ],
@@ -362,9 +362,9 @@
     "status": "synthesized",
     "url": "/concepts/plc-hmi-and-scada",
     "relatedConcepts": [
-      "it-ot-convergence",
+      "isa-95",
       "unified-namespace-uns",
-      "isa-95"
+      "it-ot-convergence"
     ],
     "supportingArticles": []
   },
@@ -384,10 +384,10 @@
     "status": "synthesized",
     "url": "/concepts/plm-erp-mes-integration",
     "relatedConcepts": [
-      "it-ot-convergence",
-      "engineering-change-management",
       "digital-thread-in-manufacturing",
-      "isa-95"
+      "isa-95",
+      "it-ot-convergence",
+      "engineering-change-management"
     ],
     "supportingArticles": []
   },
@@ -408,11 +408,11 @@
     "url": "/concepts/ppap-in-aerospace--as9145",
     "relatedConcepts": [
       "as9100d-npi-clauses",
-      "pfmea-and-dfmea",
-      "moc--npi-process",
-      "aerospace-npi-process-overview",
-      "configuration-management-basics",
       "first-article-inspection--fai-and-fair-as9102b",
+      "aerospace-npi-process-overview",
+      "moc--npi-process",
+      "pfmea-and-dfmea",
+      "configuration-management-basics",
       "ppap-in-aerospace--as9145"
     ],
     "supportingArticles": []
@@ -432,10 +432,10 @@
     "status": "synthesized",
     "url": "/concepts/unified-namespace-uns",
     "relatedConcepts": [
-      "it-ot-convergence",
       "plm-erp-mes-integration",
+      "isa-95",
       "digital-twins-in-manufacturing",
-      "isa-95"
+      "it-ot-convergence"
     ],
     "supportingArticles": []
   },
