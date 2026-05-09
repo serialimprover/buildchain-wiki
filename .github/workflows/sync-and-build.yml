@@ -14,20 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout website repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: website
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout private vault repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: serialimprover/buildchain-private
           path: vault
           token: ${{ secrets.PRIVATE_REPO_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.10'
 
