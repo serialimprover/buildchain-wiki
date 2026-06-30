@@ -15,13 +15,13 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/as9100d-npi-clauses",
       "relatedConcepts": [
-        "design-reviews--pdr-cdr-trr",
-        "configuration-management-basics",
-        "first-article-inspection--fai-and-fair-as9102b",
-        "ppap-in-aerospace--as9145",
-        "moc--npi-process",
         "pfmea-and-dfmea",
         "aerospace-npi-process-overview",
+        "first-article-inspection--fai-and-fair-as9102b",
+        "ppap-in-aerospace--as9145",
+        "configuration-management-basics",
+        "moc--npi-process",
+        "design-reviews--pdr-cdr-trr",
         "as9100d-npi-clauses"
       ],
       "supportingArticles": []
@@ -40,13 +40,13 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/aerospace-npi-process-overview",
       "relatedConcepts": [
-        "design-reviews--pdr-cdr-trr",
-        "first-article-inspection--fai-and-fair-as9102b",
         "ppap-in-aerospace--as9145",
-        "configuration-management-basics",
-        "moc--npi-process",
-        "as9100d-npi-clauses",
+        "first-article-inspection--fai-and-fair-as9102b",
         "moc--digital-systems",
+        "configuration-management-basics",
+        "as9100d-npi-clauses",
+        "moc--npi-process",
+        "design-reviews--pdr-cdr-trr",
         "aerospace-npi-process-overview"
       ],
       "supportingArticles": []
@@ -66,12 +66,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/configuration-management-basics",
       "relatedConcepts": [
-        "first-article-inspection--fai-and-fair-as9102b",
-        "design-reviews--pdr-cdr-trr",
-        "moc--npi-process",
-        "as9100d-npi-clauses",
         "aerospace-npi-process-overview",
+        "first-article-inspection--fai-and-fair-as9102b",
         "moc--digital-systems",
+        "as9100d-npi-clauses",
+        "moc--npi-process",
+        "design-reviews--pdr-cdr-trr",
         "configuration-management-basics"
       ],
       "supportingArticles": []
@@ -90,13 +90,13 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/design-reviews--pdr-cdr-trr",
       "relatedConcepts": [
-        "first-article-inspection--fai-and-fair-as9102b",
-        "configuration-management-basics",
-        "ppap-in-aerospace--as9145",
-        "moc--npi-process",
         "pfmea-and-dfmea",
-        "as9100d-npi-clauses",
         "aerospace-npi-process-overview",
+        "first-article-inspection--fai-and-fair-as9102b",
+        "ppap-in-aerospace--as9145",
+        "configuration-management-basics",
+        "as9100d-npi-clauses",
+        "moc--npi-process",
         "design-reviews--pdr-cdr-trr"
       ],
       "supportingArticles": []
@@ -118,14 +118,14 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/digital-thread-in-manufacturing",
       "relatedConcepts": [
-        "first-article-inspection--fai-and-fair-as9102b",
-        "digital-twins-in-manufacturing",
-        "engineering-change-management",
         "isa-95",
-        "it-ot-convergence",
-        "plm-erp-mes-integration",
+        "engineering-change-management",
         "aerospace-npi-process-overview",
-        "unified-namespace-uns"
+        "digital-twins-in-manufacturing",
+        "first-article-inspection--fai-and-fair-as9102b",
+        "unified-namespace-uns",
+        "plm-erp-mes-integration",
+        "it-ot-convergence"
       ],
       "supportingArticles": []
     },
@@ -144,8 +144,8 @@ const graphData = {
       "url": "/concepts/digital-twins-in-manufacturing",
       "relatedConcepts": [
         "digital-thread-in-manufacturing",
-        "it-ot-convergence",
         "unified-namespace-uns",
+        "it-ot-convergence",
         "plm-erp-mes-integration"
       ],
       "supportingArticles": []
@@ -165,8 +165,8 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/engineering-change-management",
       "relatedConcepts": [
-        "isa-95",
         "digital-thread-in-manufacturing",
+        "isa-95",
         "plm-erp-mes-integration"
       ],
       "supportingArticles": []
@@ -186,12 +186,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/first-article-inspection--fai-and-fair-as9102b",
       "relatedConcepts": [
-        "configuration-management-basics",
-        "ppap-in-aerospace--as9145",
-        "moc--npi-process",
         "pfmea-and-dfmea",
-        "as9100d-npi-clauses",
         "aerospace-npi-process-overview",
+        "ppap-in-aerospace--as9145",
+        "configuration-management-basics",
+        "as9100d-npi-clauses",
+        "moc--npi-process",
         "first-article-inspection--fai-and-fair-as9102b"
       ],
       "supportingArticles": []
@@ -231,9 +231,9 @@ const graphData = {
       "url": "/concepts/isa-95",
       "relatedConcepts": [
         "digital-thread-in-manufacturing",
-        "it-ot-convergence",
         "unified-namespace-uns",
-        "plm-erp-mes-integration"
+        "plm-erp-mes-integration",
+        "it-ot-convergence"
       ],
       "supportingArticles": []
     },
@@ -252,10 +252,10 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/it-ot-convergence",
       "relatedConcepts": [
-        "digital-twins-in-manufacturing",
         "unified-namespace-uns",
         "plm-erp-mes-integration",
-        "isa-95"
+        "isa-95",
+        "digital-twins-in-manufacturing"
       ],
       "supportingArticles": []
     },
@@ -293,9 +293,9 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/moc--digital-systems",
       "relatedConcepts": [
+        "pfmea-and-dfmea",
         "aerospace-npi-process-overview",
-        "configuration-management-basics",
-        "pfmea-and-dfmea"
+        "configuration-management-basics"
       ],
       "supportingArticles": []
     },
@@ -312,14 +312,14 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/moc--npi-process",
       "relatedConcepts": [
-        "first-article-inspection--fai-and-fair-as9102b",
-        "design-reviews--pdr-cdr-trr",
-        "ppap-in-aerospace--as9145",
-        "configuration-management-basics",
         "pfmea-and-dfmea",
-        "as9100d-npi-clauses",
         "aerospace-npi-process-overview",
-        "moc--digital-systems"
+        "ppap-in-aerospace--as9145",
+        "first-article-inspection--fai-and-fair-as9102b",
+        "moc--digital-systems",
+        "configuration-management-basics",
+        "as9100d-npi-clauses",
+        "design-reviews--pdr-cdr-trr"
       ],
       "supportingArticles": []
     },
@@ -339,12 +339,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/pfmea-and-dfmea",
       "relatedConcepts": [
-        "design-reviews--pdr-cdr-trr",
-        "configuration-management-basics",
-        "ppap-in-aerospace--as9145",
-        "moc--npi-process",
-        "as9100d-npi-clauses",
         "aerospace-npi-process-overview",
+        "ppap-in-aerospace--as9145",
+        "configuration-management-basics",
+        "as9100d-npi-clauses",
+        "moc--npi-process",
+        "design-reviews--pdr-cdr-trr",
         "pfmea-and-dfmea"
       ],
       "supportingArticles": []
@@ -363,9 +363,9 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/plc-hmi-and-scada",
       "relatedConcepts": [
-        "it-ot-convergence",
         "unified-namespace-uns",
-        "isa-95"
+        "isa-95",
+        "it-ot-convergence"
       ],
       "supportingArticles": []
     },
@@ -386,9 +386,9 @@ const graphData = {
       "url": "/concepts/plm-erp-mes-integration",
       "relatedConcepts": [
         "digital-thread-in-manufacturing",
-        "it-ot-convergence",
         "engineering-change-management",
-        "isa-95"
+        "isa-95",
+        "it-ot-convergence"
       ],
       "supportingArticles": []
     },
@@ -408,12 +408,12 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/ppap-in-aerospace--as9145",
       "relatedConcepts": [
+        "pfmea-and-dfmea",
+        "aerospace-npi-process-overview",
         "first-article-inspection--fai-and-fair-as9102b",
         "configuration-management-basics",
-        "moc--npi-process",
-        "pfmea-and-dfmea",
         "as9100d-npi-clauses",
-        "aerospace-npi-process-overview",
+        "moc--npi-process",
         "ppap-in-aerospace--as9145"
       ],
       "supportingArticles": []
@@ -433,10 +433,10 @@ const graphData = {
       "status": "synthesized",
       "url": "/concepts/unified-namespace-uns",
       "relatedConcepts": [
-        "digital-twins-in-manufacturing",
         "it-ot-convergence",
         "plm-erp-mes-integration",
-        "isa-95"
+        "isa-95",
+        "digital-twins-in-manufacturing"
       ],
       "supportingArticles": []
     },
@@ -908,26 +908,6 @@ const graphData = {
   "links": [
     {
       "source": "as9100d-npi-clauses",
-      "target": "design-reviews--pdr-cdr-trr"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "configuration-management-basics"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "ppap-in-aerospace--as9145"
-    },
-    {
-      "source": "as9100d-npi-clauses",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "as9100d-npi-clauses",
       "target": "pfmea-and-dfmea"
     },
     {
@@ -936,15 +916,27 @@ const graphData = {
     },
     {
       "source": "as9100d-npi-clauses",
-      "target": "as9100d-npi-clauses"
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
-      "source": "aerospace-npi-process-overview",
+      "source": "as9100d-npi-clauses",
+      "target": "ppap-in-aerospace--as9145"
+    },
+    {
+      "source": "as9100d-npi-clauses",
+      "target": "configuration-management-basics"
+    },
+    {
+      "source": "as9100d-npi-clauses",
+      "target": "moc--npi-process"
+    },
+    {
+      "source": "as9100d-npi-clauses",
       "target": "design-reviews--pdr-cdr-trr"
     },
     {
-      "source": "aerospace-npi-process-overview",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
+      "source": "as9100d-npi-clauses",
+      "target": "as9100d-npi-clauses"
     },
     {
       "source": "aerospace-npi-process-overview",
@@ -952,15 +944,7 @@ const graphData = {
     },
     {
       "source": "aerospace-npi-process-overview",
-      "target": "configuration-management-basics"
-    },
-    {
-      "source": "aerospace-npi-process-overview",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "aerospace-npi-process-overview",
-      "target": "as9100d-npi-clauses"
+      "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
       "source": "aerospace-npi-process-overview",
@@ -968,6 +952,26 @@ const graphData = {
     },
     {
       "source": "aerospace-npi-process-overview",
+      "target": "configuration-management-basics"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "as9100d-npi-clauses"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "moc--npi-process"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "design-reviews--pdr-cdr-trr"
+    },
+    {
+      "source": "aerospace-npi-process-overview",
+      "target": "aerospace-npi-process-overview"
+    },
+    {
+      "source": "configuration-management-basics",
       "target": "aerospace-npi-process-overview"
     },
     {
@@ -976,11 +980,7 @@ const graphData = {
     },
     {
       "source": "configuration-management-basics",
-      "target": "design-reviews--pdr-cdr-trr"
-    },
-    {
-      "source": "configuration-management-basics",
-      "target": "moc--npi-process"
+      "target": "moc--digital-systems"
     },
     {
       "source": "configuration-management-basics",
@@ -988,31 +988,15 @@ const graphData = {
     },
     {
       "source": "configuration-management-basics",
-      "target": "aerospace-npi-process-overview"
-    },
-    {
-      "source": "configuration-management-basics",
-      "target": "moc--digital-systems"
-    },
-    {
-      "source": "configuration-management-basics",
-      "target": "configuration-management-basics"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "first-article-inspection--fai-and-fair-as9102b"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "configuration-management-basics"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
-      "target": "ppap-in-aerospace--as9145"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
       "target": "moc--npi-process"
+    },
+    {
+      "source": "configuration-management-basics",
+      "target": "design-reviews--pdr-cdr-trr"
+    },
+    {
+      "source": "configuration-management-basics",
+      "target": "configuration-management-basics"
     },
     {
       "source": "design-reviews--pdr-cdr-trr",
@@ -1020,27 +1004,31 @@ const graphData = {
     },
     {
       "source": "design-reviews--pdr-cdr-trr",
-      "target": "as9100d-npi-clauses"
-    },
-    {
-      "source": "design-reviews--pdr-cdr-trr",
       "target": "aerospace-npi-process-overview"
     },
     {
       "source": "design-reviews--pdr-cdr-trr",
-      "target": "design-reviews--pdr-cdr-trr"
-    },
-    {
-      "source": "digital-thread-in-manufacturing",
       "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
-      "source": "digital-thread-in-manufacturing",
-      "target": "digital-twins-in-manufacturing"
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "ppap-in-aerospace--as9145"
     },
     {
-      "source": "digital-thread-in-manufacturing",
-      "target": "engineering-change-management"
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "configuration-management-basics"
+    },
+    {
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "as9100d-npi-clauses"
+    },
+    {
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "moc--npi-process"
+    },
+    {
+      "source": "design-reviews--pdr-cdr-trr",
+      "target": "design-reviews--pdr-cdr-trr"
     },
     {
       "source": "digital-thread-in-manufacturing",
@@ -1048,11 +1036,7 @@ const graphData = {
     },
     {
       "source": "digital-thread-in-manufacturing",
-      "target": "it-ot-convergence"
-    },
-    {
-      "source": "digital-thread-in-manufacturing",
-      "target": "plm-erp-mes-integration"
+      "target": "engineering-change-management"
     },
     {
       "source": "digital-thread-in-manufacturing",
@@ -1060,7 +1044,23 @@ const graphData = {
     },
     {
       "source": "digital-thread-in-manufacturing",
+      "target": "digital-twins-in-manufacturing"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
+      "target": "first-article-inspection--fai-and-fair-as9102b"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
       "target": "unified-namespace-uns"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
+      "target": "plm-erp-mes-integration"
+    },
+    {
+      "source": "digital-thread-in-manufacturing",
+      "target": "it-ot-convergence"
     },
     {
       "source": "digital-thread-in-manufacturing",
@@ -1072,11 +1072,11 @@ const graphData = {
     },
     {
       "source": "digital-twins-in-manufacturing",
-      "target": "it-ot-convergence"
+      "target": "unified-namespace-uns"
     },
     {
       "source": "digital-twins-in-manufacturing",
-      "target": "unified-namespace-uns"
+      "target": "it-ot-convergence"
     },
     {
       "source": "digital-twins-in-manufacturing",
@@ -1100,11 +1100,11 @@ const graphData = {
     },
     {
       "source": "engineering-change-management",
-      "target": "isa-95"
+      "target": "digital-thread-in-manufacturing"
     },
     {
       "source": "engineering-change-management",
-      "target": "digital-thread-in-manufacturing"
+      "target": "isa-95"
     },
     {
       "source": "engineering-change-management",
@@ -1132,7 +1132,11 @@ const graphData = {
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "configuration-management-basics"
+      "target": "pfmea-and-dfmea"
+    },
+    {
+      "source": "first-article-inspection--fai-and-fair-as9102b",
+      "target": "aerospace-npi-process-overview"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
@@ -1140,11 +1144,7 @@ const graphData = {
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "pfmea-and-dfmea"
+      "target": "configuration-management-basics"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
@@ -1152,7 +1152,7 @@ const graphData = {
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
-      "target": "aerospace-npi-process-overview"
+      "target": "moc--npi-process"
     },
     {
       "source": "first-article-inspection--fai-and-fair-as9102b",
@@ -1184,10 +1184,6 @@ const graphData = {
     },
     {
       "source": "isa-95",
-      "target": "it-ot-convergence"
-    },
-    {
-      "source": "isa-95",
       "target": "unified-namespace-uns"
     },
     {
@@ -1195,8 +1191,8 @@ const graphData = {
       "target": "plm-erp-mes-integration"
     },
     {
-      "source": "it-ot-convergence",
-      "target": "digital-twins-in-manufacturing"
+      "source": "isa-95",
+      "target": "it-ot-convergence"
     },
     {
       "source": "it-ot-convergence",
@@ -1209,6 +1205,10 @@ const graphData = {
     {
       "source": "it-ot-convergence",
       "target": "isa-95"
+    },
+    {
+      "source": "it-ot-convergence",
+      "target": "digital-twins-in-manufacturing"
     },
     {
       "source": "it-ot-convergence",
@@ -1244,6 +1244,10 @@ const graphData = {
     },
     {
       "source": "moc--digital-systems",
+      "target": "pfmea-and-dfmea"
+    },
+    {
+      "source": "moc--digital-systems",
       "target": "aerospace-npi-process-overview"
     },
     {
@@ -1251,8 +1255,16 @@ const graphData = {
       "target": "configuration-management-basics"
     },
     {
-      "source": "moc--digital-systems",
+      "source": "moc--npi-process",
       "target": "pfmea-and-dfmea"
+    },
+    {
+      "source": "moc--npi-process",
+      "target": "aerospace-npi-process-overview"
+    },
+    {
+      "source": "moc--npi-process",
+      "target": "ppap-in-aerospace--as9145"
     },
     {
       "source": "moc--npi-process",
@@ -1260,19 +1272,11 @@ const graphData = {
     },
     {
       "source": "moc--npi-process",
-      "target": "design-reviews--pdr-cdr-trr"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "ppap-in-aerospace--as9145"
+      "target": "moc--digital-systems"
     },
     {
       "source": "moc--npi-process",
       "target": "configuration-management-basics"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "pfmea-and-dfmea"
     },
     {
       "source": "moc--npi-process",
@@ -1280,15 +1284,15 @@ const graphData = {
     },
     {
       "source": "moc--npi-process",
-      "target": "aerospace-npi-process-overview"
-    },
-    {
-      "source": "moc--npi-process",
-      "target": "moc--digital-systems"
+      "target": "design-reviews--pdr-cdr-trr"
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "design-reviews--pdr-cdr-trr"
+      "target": "aerospace-npi-process-overview"
+    },
+    {
+      "source": "pfmea-and-dfmea",
+      "target": "ppap-in-aerospace--as9145"
     },
     {
       "source": "pfmea-and-dfmea",
@@ -1296,7 +1300,7 @@ const graphData = {
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "ppap-in-aerospace--as9145"
+      "target": "as9100d-npi-clauses"
     },
     {
       "source": "pfmea-and-dfmea",
@@ -1304,19 +1308,11 @@ const graphData = {
     },
     {
       "source": "pfmea-and-dfmea",
-      "target": "as9100d-npi-clauses"
-    },
-    {
-      "source": "pfmea-and-dfmea",
-      "target": "aerospace-npi-process-overview"
+      "target": "design-reviews--pdr-cdr-trr"
     },
     {
       "source": "pfmea-and-dfmea",
       "target": "pfmea-and-dfmea"
-    },
-    {
-      "source": "plc-hmi-and-scada",
-      "target": "it-ot-convergence"
     },
     {
       "source": "plc-hmi-and-scada",
@@ -1325,6 +1321,10 @@ const graphData = {
     {
       "source": "plc-hmi-and-scada",
       "target": "isa-95"
+    },
+    {
+      "source": "plc-hmi-and-scada",
+      "target": "it-ot-convergence"
     },
     {
       "source": "plc-hmi-and-scada",
@@ -1344,15 +1344,15 @@ const graphData = {
     },
     {
       "source": "plm-erp-mes-integration",
-      "target": "it-ot-convergence"
-    },
-    {
-      "source": "plm-erp-mes-integration",
       "target": "engineering-change-management"
     },
     {
       "source": "plm-erp-mes-integration",
       "target": "isa-95"
+    },
+    {
+      "source": "plm-erp-mes-integration",
+      "target": "it-ot-convergence"
     },
     {
       "source": "plm-erp-mes-integration",
@@ -1368,6 +1368,14 @@ const graphData = {
     },
     {
       "source": "ppap-in-aerospace--as9145",
+      "target": "pfmea-and-dfmea"
+    },
+    {
+      "source": "ppap-in-aerospace--as9145",
+      "target": "aerospace-npi-process-overview"
+    },
+    {
+      "source": "ppap-in-aerospace--as9145",
       "target": "first-article-inspection--fai-and-fair-as9102b"
     },
     {
@@ -1376,27 +1384,15 @@ const graphData = {
     },
     {
       "source": "ppap-in-aerospace--as9145",
-      "target": "moc--npi-process"
-    },
-    {
-      "source": "ppap-in-aerospace--as9145",
-      "target": "pfmea-and-dfmea"
-    },
-    {
-      "source": "ppap-in-aerospace--as9145",
       "target": "as9100d-npi-clauses"
     },
     {
       "source": "ppap-in-aerospace--as9145",
-      "target": "aerospace-npi-process-overview"
+      "target": "moc--npi-process"
     },
     {
       "source": "ppap-in-aerospace--as9145",
       "target": "ppap-in-aerospace--as9145"
-    },
-    {
-      "source": "unified-namespace-uns",
-      "target": "digital-twins-in-manufacturing"
     },
     {
       "source": "unified-namespace-uns",
@@ -1409,6 +1405,10 @@ const graphData = {
     {
       "source": "unified-namespace-uns",
       "target": "isa-95"
+    },
+    {
+      "source": "unified-namespace-uns",
+      "target": "digital-twins-in-manufacturing"
     },
     {
       "source": "unified-namespace-uns",
